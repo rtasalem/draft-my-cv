@@ -1,0 +1,22 @@
+{
+  "name": "draft-my-cv",
+  "version": "0.1.0",
+  "description": "A CV (resume) generator that takes in information such as contact details, education, work experience, projects and builds a ready to download CV using the University of Harvard's Mignone Center for Career Success Bullet Point Resume Template.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rtasalem/draft-my-cv.git"
+  },
+  "author": "Rana Salem <github.com/rtasalem>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rtasalem/draft-my-cv/issues"
+  },
+  "homepage": "https://github.com/rtasalem/draft-my-cv#readme",
+  "dependencies": {
+    "express": "4.21.0"
+  }
+}
