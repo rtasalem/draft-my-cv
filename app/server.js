@@ -1,4 +1,5 @@
 import express from 'express'
+import nunjucks from 'nunjucks'
 import {
   healthy,
   healthz,
@@ -9,6 +10,13 @@ import {
 const server = async () => {
   const app = express()
   const port = 3000
+
+  nunjucks.configure('app/views', {
+    autoescape: true,
+    express: app
+  })
+
+  app.set('view engine', 'njk')
 
   app.use(healthy)
   app.use(healthz)
