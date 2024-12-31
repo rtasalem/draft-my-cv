@@ -1,0 +1,5 @@
+services:
+  draft-my-cv:
+    build: .
+    image: draft-my-cv
+    container_name: draft-my-cv

@@ -1,22 +1,33 @@
 {
   "name": "draft-my-cv",
   "version": "0.1.0",
-  "description": "A CV (resume) generator that takes in information such as contact details, education, work experience, projects and builds a ready to download CV using the University of Harvard's Mignone Center for Career Success Bullet Point Resume Template.",
+  "description": "A CV (resume) generator.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pretest": "npm run test:lint",
+    "test": "jest --runInBand --forceExit",
+    "test:watch": "jest --coverage=false --onlyChanged --watch --runInBand",
+    "test:lint": "standard",
+    "test:debug": "node --inspect-brk=0.0.0.0 ./node_modules/jest/bin/jest.js --coverage=false --onlyChanged --watch --runInBand --no-cache",
+    "start:watch": "nodemon --inspect=0.0.0.0 --ext js --legacy-watch app/index.js",
+    "start:debug": "nodemon --inspect-brk=0.0.0.0 --ext js --legacy-watch app/index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rtasalem/draft-my-cv.git"
   },
-  "author": "Rana Salem <github.com/rtasalem>",
-  "license": "ISC",
+  "author": "Rana Salem (github.com/rtasalem)",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/rtasalem/draft-my-cv/issues"
   },
   "homepage": "https://github.com/rtasalem/draft-my-cv#readme",
   "dependencies": {
-    "express": "4.21.0"
+    "express": "4.21.2",
+    "nunjucks": "3.2.4"
+  },
+  "devDependencies": {
+    "nodemon": "3.1.9"
   }
 }
