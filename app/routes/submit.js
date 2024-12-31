@@ -1,7 +1,7 @@
 import express from 'express'
 const router = express.Router()
 
-router.get('/submit', (req, res) => {
+router.get('/', (req, res) => {
   res.send('submit your details here')
 })
 
