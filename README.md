@@ -7,7 +7,14 @@ This application is intended to cut down the time taken to create a structured, 
 
 ## Project Stack
 
+## Features
+- [ ] Download your CV as a Word Document or PDF file
+- [ ] Dark mode
+
 ## Getting Started
+
+- [ ] Should be available as a Docker image that can be pulled from DockerHub
+- [ ] Should be hosted online
 
 ### Prequisites
 
