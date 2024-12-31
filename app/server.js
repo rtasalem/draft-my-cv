@@ -3,6 +3,7 @@ import nunjucks from 'nunjucks'
 import {
   healthy,
   healthz,
+  home,
   submit,
   download
 } from './routes/index.js'
@@ -20,6 +21,7 @@ const server = async () => {
 
   app.use(healthy)
   app.use(healthz)
+  app.use(home)
   app.use(submit)
   app.use(download)
 

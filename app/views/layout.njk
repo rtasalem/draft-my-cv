@@ -1,7 +1,21 @@
-{% block header %}
-This is a header
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-{% block footer %}
-&copy 2024 Rana Salem
-{%  endblock %}
+  <title>
+    {% if title %}
+      Draft My CV | {{ title }}
+    {% else %}
+      Draft My CV
+    {% endif %}
+  </title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+</head>
+
+<body>
+  
+</body>
+</html>

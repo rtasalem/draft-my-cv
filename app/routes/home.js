@@ -1,8 +1,8 @@
 import express from 'express'
 const router = express.Router()
 
-router.get('/submit', (req, res) => {
-  res.render('submit')
+router.get('/', (req, res) => {
+  res.render('home')
 })
 
 export default router
