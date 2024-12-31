@@ -5,6 +5,10 @@ Once your CV has been generated, you can download it as a Word document or a PDF
 
 This application is intended to cut down the time taken to create a structured, clear, and well-crafted CV for anyone who is currently job hunting. Good luck!
 
+## Project Stack
+
 ## Getting Started
+
+### Prequisites
 
 TBC
