@@ -8,6 +8,7 @@ This application is intended to cut down the time taken to create a structured, 
 ## Project Stack
 
 ## Features
+- [ ] Input validation using Joi
 - [ ] Download your CV as a Word Document or PDF file
 - [ ] Dark mode
 
