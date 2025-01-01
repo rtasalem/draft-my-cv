@@ -1,19 +1,12 @@
 services:
   draft-my-cv:
     build:
+      context: .
       target: development
     image: draft-my-cv-development
     container_name: draft-my-cv-development
     ports:
       - "3000:3000"
-      - "9229:9229"
     volumes:
       - ./app:/home/node/app
       - ./package.json:/home/node/package.json
-    networks:
-      - draft-my-cv
-
-networks:
-  draft-my-cv:
-    driver: bridge
-    name: draft-my-cv
