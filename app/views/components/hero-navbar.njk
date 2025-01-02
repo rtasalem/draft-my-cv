@@ -1,0 +1,38 @@
+{% set navItems = [
+    { title: 'About', url: '/about', pageName: 'about' },
+    { title: 'GitHub', url: 'https://github.com/rtasalem', pageName: 'github' }
+] %}
+
+<section class="hero is-link">
+  <div class="hero-head">
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <a href="http://ranasalem.io/" class="navbar-item">
+            <strong>Rana Salem</strong>
+          </a>
+        </div>
+        <div id="navbarHero" class="navbar-menu">
+          <div class="navbar-end">
+          {% for nav in navItems %}
+              {% if pageName == nav.pageName %}
+              <a href="{{ nav.url }}" class="navbar-item active">
+                {% else %}
+                <a href="{{ nav.url }}" class="navbar-item">
+                  {% endif %}
+                    {{ nav.title }}
+                </a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="hero-body">
+    <div class="container">
+      <p class="title">Draft My CV</p>
+      <p class="subtitle">Create a great CV in seconds that's ready for any job application</p>
+    </div>
+  </div>
+</section>

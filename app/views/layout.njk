@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>
-    {% if title %}
-      Draft My CV • {{ title }}
-    {% else %}
-      Draft My CV
-    {% endif %}
-  </title>
+    <title>
+      {% if title %}
+        Draft My CV • {{ title }}
+      {% else %}
+        Draft My CV
+      {% endif %}
+    </title>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
-</head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+  </head>
 
-<body>
-  
-</body>
+  <body>
+    {% include 'components/hero-navbar.njk' %}
+  </body>
+
+  <footer>
+    {% include 'components/footer.njk' %}
+  </footer>
 </html>
