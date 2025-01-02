@@ -2,6 +2,11 @@
     { title: 'About', url: '/about', pageName: 'about' }
 ] %}
 
+{% set navItemsEnd = [
+    { title: 'GitHub', url: 'https://github.com/rtasalem', icon: 'fab fa-github' },
+    { title: 'Portfolio', url: 'http://ranasalem.io/', icon: 'fa-solid fa-code' }
+] %}
+
 <section class="hero is-link">
   <div class="hero-head">
     <nav class="navbar">
@@ -11,32 +16,30 @@
             <strong>Developed by Rana Salem</strong>
           </p>
         </div>
+
         <div id="navbarHero" class="navbar-menu">
           <div class="navbar-start">
-          {% for nav in navItemsStart %}
-              {% if pageName == nav.pageName %}
-              <a href="{{ nav.url }}" class="navbar-item active">
+          {% for navItem in navItemsStart %}
+              {% if pageName == navItem.pageName %}
+              <a href="{{ navItem.url }}" class="navbar-item active">
                 {% else %}
-                <a href="{{ nav.url }}" class="navbar-item">
+                <a href="{{ navItem.url }}" class="navbar-item">
                   {% endif %}
-                    {{ nav.title }}
+                    {{ navItem.title }}
                 </a>
             {% endfor %}
           </div>
+
           <div class="navbar-end">
             <p class="buttons">
-              <button class="button is-dark">
+            {% for navItem in navItemsEnd %}
+              <a href="{{ navItem.url }}" class="button is-dark" target="_blank">
                 <span class="icon">
-                  <i class="fab fa-github"></i>
+                  <i class="{{ navItem.icon }}"></i>
                 </span>
-                <span>GitHub</span>
-              </button>
-              <button class="button is-dark">
-                <span class="icon">
-                  <i class="fa-solid fa-code"></i>
-                </span>
-                <span>Portfolio</span>
-              </button>
+                <span>{{ navItem.title }}</span>
+              </a>
+            {% endfor %}
             </p>
           </div>
         </div>
