@@ -22,6 +22,7 @@ const server = async () => {
 
   const __dirname = path.dirname(new URL(import.meta.url).pathname)
   app.use('/utils', express.static(path.join(__dirname, 'utils')))
+  app.use('/assets', express.static(path.join(__dirname, 'assets')))
 
   app.use(healthy)
   app.use(healthz)
