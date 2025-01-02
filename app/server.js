@@ -3,9 +3,9 @@ import nunjucks from 'nunjucks'
 import {
   healthy,
   healthz,
+  about,
   submit,
-  download,
-  about
+  download
 } from './routes/index.js'
 
 const server = async () => {
@@ -21,9 +21,9 @@ const server = async () => {
 
   app.use(healthy)
   app.use(healthz)
+  app.use(about)
   app.use(submit)
   app.use(download)
-  app.use(about)
 
   app.listen(port, () => {
     console.log(`Application listening on http://localhost:${port}`)
