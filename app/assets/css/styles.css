@@ -6,3 +6,11 @@ footer .content {
   font-size: 0.875rem;
   line-height: 1.2;
 }
+
+.bd-hr {
+  margin-left: 0;
+  background-color: var(--theme-color, var(--bulma-primary));
+  border-radius: 9999px;
+  height: .25rem;
+  width: 4em;
+}
