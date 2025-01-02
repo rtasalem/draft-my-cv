@@ -1,6 +1,5 @@
-{% set navItems = [
-    { title: 'About', url: '/about', pageName: 'about' },
-    { title: 'GitHub', url: 'https://github.com/rtasalem', pageName: 'github' }
+{% set navItemsStart = [
+    { title: 'About', url: '/about', pageName: 'about' }
 ] %}
 
 <section class="hero is-link">
@@ -8,13 +7,13 @@
     <nav class="navbar">
       <div class="container">
         <div class="navbar-brand">
-          <a href="http://ranasalem.io/" class="navbar-item">
-            <strong>Rana Salem</strong>
-          </a>
+          <p class="navbar-item">
+            <strong>Developed by Rana Salem</strong>
+          </p>
         </div>
         <div id="navbarHero" class="navbar-menu">
-          <div class="navbar-end">
-          {% for nav in navItems %}
+          <div class="navbar-start">
+          {% for nav in navItemsStart %}
               {% if pageName == nav.pageName %}
               <a href="{{ nav.url }}" class="navbar-item active">
                 {% else %}
@@ -24,6 +23,22 @@
                 </a>
             {% endfor %}
           </div>
+          <div class="navbar-end">
+            <p class="buttons">
+              <button class="button is-dark">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>GitHub</span>
+              </button>
+              <button class="button is-dark">
+                <span class="icon">
+                  <i class="fa-solid fa-code"></i>
+                </span>
+                <span>Portfolio</span>
+              </button>
+            </p>
+          </div>
         </div>
       </div>
     </nav>
@@ -31,7 +46,7 @@
 
   <div class="hero-body">
     <div class="container">
-      <p class="title">Draft My CV</p>
+      <a href="/"><p class="title">Draft My CV</p></a>
       <p class="subtitle">Create a great CV in seconds that's ready for any job application</p>
     </div>
   </div>

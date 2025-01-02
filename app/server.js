@@ -1,5 +1,6 @@
 import express from 'express'
 import nunjucks from 'nunjucks'
+import path from 'path'
 import {
   healthy,
   healthz,
@@ -18,6 +19,9 @@ const server = async () => {
   })
 
   app.set('view engine', 'njk')
+
+  const __dirname = path.dirname(new URL(import.meta.url).pathname)
+  app.use('/utils', express.static(path.join(__dirname, 'utils')))
 
   app.use(healthy)
   app.use(healthz)
