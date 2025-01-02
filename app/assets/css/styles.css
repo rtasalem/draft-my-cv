@@ -1,11 +1,8 @@
-html, body {
-  height: 100%;
+footer.footer {
+  padding: 2rem 1.5rem 2rem;
 }
 
-.full-height {
-  min-height: 100vh;
-}
-
-footer.mt-auto {
-  margin-top: auto;
+footer .content {
+  font-size: 0.875rem;
+  line-height: 1.2;
 }
