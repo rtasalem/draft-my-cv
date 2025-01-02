@@ -11,12 +11,6 @@
   <div class="hero-head">
     <nav class="navbar">
       <div class="container">
-        <div class="navbar-brand">
-          <p class="navbar-item">
-            <strong>Developed by Rana Salem</strong>
-          </p>
-        </div>
-
         <div id="navbarHero" class="navbar-menu">
           <div class="navbar-start">
           {% for navItem in navItemsStart %}
@@ -31,6 +25,9 @@
           </div>
 
           <div class="navbar-end">
+            <div class="navbar-brand">
+              <p class="navbar-item">Developed by Rana Salem</p>
+            </div>
             <p class="buttons">
             {% for navItem in navItemsEnd %}
               <a href="{{ navItem.url }}" class="button is-dark" target="_blank">
