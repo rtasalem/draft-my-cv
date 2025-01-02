@@ -12,14 +12,17 @@ This application is intended to cut down the time taken to create a structured, 
 - [ ] Download your CV as a Word Document or PDF file
 - [ ] Dark mode
 
+### Prequisites
+
+TBC
+
 ## Getting Started
 
 - [ ] Should be available as a Docker image that can be pulled from DockerHub
 - [ ] Should be hosted online
 
-### Prequisites
-
-TBC
+## License
+See the [LICENSE](/LICENSE.md) file for license rights and limitations ([MIT](https://opensource.org/license/mit)).
 
 ## Acknowledgments
 A [Nunjucks Bulma Starter Kit](https://github.com/benninkcorien/nunjucks-starter-kit) developed by [benninkcorien](https://github.com/benninkcorien) was helpful in understanding how to integrate Bulma.io with Nunjucks.<br>
