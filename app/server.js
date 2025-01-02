@@ -1,7 +1,7 @@
 import express from 'express'
 import nunjucks from 'nunjucks'
 import path from 'path'
-import { staticDirs } from './constants/static-dirs.js'
+import { staticDirs } from './constants/index.js'
 import {
   healthy,
   healthz,
@@ -22,6 +22,7 @@ const server = async () => {
   app.set('view engine', 'njk')
 
   const __dirname = path.dirname(new URL(import.meta.url).pathname)
+
   staticDirs.forEach(({ route, dir }) => {
     app.use(route, express.static(path.join(__dirname, dir)))
   })
