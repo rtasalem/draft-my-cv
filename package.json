@@ -5,13 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "pretest": "npm run test:lint",
-    "test": "jest --runInBand --forceExit",
-    "test:watch": "jest --coverage=false --onlyChanged --watch --runInBand",
-    "test:lint": "standard",
-    "test:debug": "node --inspect-brk=0.0.0.0 ./node_modules/jest/bin/jest.js --coverage=false --onlyChanged --watch --runInBand --no-cache",
-    "start:watch": "nodemon --inspect=0.0.0.0 --ext js --legacy-watch app/index.js",
-    "start:debug": "nodemon --inspect-brk=0.0.0.0 --ext js --legacy-watch app/index.js"
+    "start": "node app",
+    "dev": "nodemon app",
+    "start:watch": "nodemon --inspect=0.0.0.0 --ext css,js,njk --legacy-watch app/index.js"
   },
   "repository": {
     "type": "git",
@@ -28,6 +24,7 @@
     "nunjucks": "3.2.4"
   },
   "devDependencies": {
-    "nodemon": "3.1.9"
+    "nodemon": "3.0.1",
+    "standard": "17.1.2"
   }
 }

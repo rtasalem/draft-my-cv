@@ -1,0 +1,53 @@
+{% set navItemsStart = [
+    { title: 'About', url: '/about', pageName: 'about' }
+] %}
+
+{% set navItemsEnd = [
+    { title: 'GitHub', url: 'https://github.com/rtasalem', icon: 'fab fa-github' },
+    { title: 'Portfolio', url: 'http://ranasalem.io/', icon: 'fa-solid fa-code' }
+] %}
+
+<section class="hero is-link">
+  <div class="hero-head">
+    <nav class="navbar">
+      <div class="container">
+        <div id="navbarHero" class="navbar-menu">
+          <div class="navbar-start">
+          {% for navItem in navItemsStart %}
+              {% if pageName == navItem.pageName %}
+              <a href="{{ navItem.url }}" class="navbar-item active">
+                {% else %}
+                <a href="{{ navItem.url }}" class="navbar-item">
+                  {% endif %}
+                    {{ navItem.title }}
+                </a>
+            {% endfor %}
+          </div>
+
+          <div class="navbar-end">
+            <div class="navbar-brand">
+              <p class="navbar-item">Developed by Rana Salem</p>
+            </div>
+            <p class="buttons">
+            {% for navItem in navItemsEnd %}
+              <a href="{{ navItem.url }}" class="button is-dark" target="_blank">
+                <span class="icon">
+                  <i class="{{ navItem.icon }}"></i>
+                </span>
+                <span>{{ navItem.title }}</span>
+              </a>
+            {% endfor %}
+            </p>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="hero-body">
+    <div class="container">
+      <a href="/"><p class="title">Draft My CV</p></a>
+      <p class="subtitle">Create a great CV in seconds that's ready for any job application</p>
+    </div>
+  </div>
+</section>

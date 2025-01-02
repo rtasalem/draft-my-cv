@@ -1,0 +1,12 @@
+node_modules
+npm-debug.log
+Dockerfile
+.dockerignore
+docs
+helm
+docker-compose*
+.secrets.baseline
+.pre-commit-config.yaml
+README.md 
+.vscode
+.gitignore
