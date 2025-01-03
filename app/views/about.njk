@@ -2,6 +2,13 @@
 
 {% set title = 'About' %}
 
+{% set buttons = [
+    { title: 'GitHub', url: 'https://github.com/rtasalem', icon: 'fab fa-github' },
+    { title: 'Portfolio', url: 'http://ranasalem.io/', icon: 'fa-solid fa-globe' },
+    { title: 'LinkedIn', url: 'https://www.linkedin.com/in/ranatasalem/', icon: 'fa-brands fa-linkedin' },
+    { title: 'Email', url: 'mailto:ranatasalem@gmail.com', icon: 'fa-solid fa-envelope' }
+] %}
+
 {% block mainContent %}
   <div class="container is-max-widescreen">
     <h5 class="subtitle is-4"><strong>About the Project</strong></h5>
@@ -12,8 +19,9 @@
         generate a well-structured CV (or resume) to cut out all the hours spent trying to put together
         a great CV.<br><br> Simply enter your details, hit <strong>Submit</strong>, and your CV will
         be ready to download as either a Word document or PDF which are the most compatible formats
-        when submitting as part of a job application. Job hunting is far from a fun process, so
-        I hope this makes the process a little easier. <strong>Good luck!</strong>
+        when submitting as part of a job application. <strong>Good luck!</strong><br><br> Regarding the
+        usage of Harvard University's CV/resume template, please refer to the 
+        <a href="/disclaimer" target="_blank">Disclaimer</a>.<br><br>
       </div>
     </article>
     <hr>
@@ -27,5 +35,17 @@
         Food and Rural Affairs)</a>.
       </div>
     </article>
+    <div class="buttons">
+      {% for button in buttons %}
+      <button class="button is-dark">
+        <a href="{{ button.url }}" target="_blank">
+          <span class="icon is-small">
+            <i class="{{ button.icon }}"></i>
+          </span>
+          <span>{{ button.title }}</span>
+        </a>
+        {% endfor %}
+      </button>
+    </div>
   </div>
 {% endblock mainContent %}

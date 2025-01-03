@@ -8,7 +8,8 @@ import {
   about,
   submit,
   download,
-  issues
+  issues,
+  disclaimer
 } from './routes/index.js'
 
 const server = async () => {
@@ -34,6 +35,7 @@ const server = async () => {
   app.use(submit)
   app.use(download)
   app.use(issues)
+  app.use(disclaimer)
 
   app.listen(port, () => {
     console.log(`Application listening on http://localhost:${port}`)

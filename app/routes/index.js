@@ -4,6 +4,7 @@ import about from './about.js'
 import submit from './submit.js'
 import download from './download.js'
 import issues from './issues.js'
+import disclaimer from './disclaimer.js'
 
 export {
   healthy,
@@ -11,5 +12,6 @@ export {
   about,
   submit,
   download,
-  issues
+  issues,
+  disclaimer
 }
