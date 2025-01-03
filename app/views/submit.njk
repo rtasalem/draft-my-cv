@@ -5,20 +5,34 @@
   { label: 'City', type: 'text', placeholder: 'Enter your city' },
   { label: 'Country', type: 'text', placeholder: 'Enter your country' },
   { label: 'Email Address', type: 'text', placeholder: 'Enter your email address' },
-  { label: 'Phone Number', type: 'number', placeholder: 'Enter your phone number' }
+  { label: 'Phone Number', type: 'text', placeholder: 'Enter your phone number' }
 ] %}
+
+{# {% set educationFields = [
+  { label: 'University', type: 'text', placeholder: 'Enter your university' },
+  { label: 'Study Abroad (if applicable)', type: 'text', placeholder: 'Enter name of host university' },
+  { label: 'High School', type: 'text', placeholder: 'Enter your high school' }
+] %}
+
+{% set educationSubfields = [
+  { label: 'Degree', type: 'text', placeholder: 'Enter your degree e.g. BSc (Hons) Chemistry' },
+  { label: 'Final Grade', type: 'text', placeholder: 'Enter your final grade' },
+  { label: 'Graduation Year', type: 'date', placeholder: 'Enter the year you graduated university' },
+  { label: 'Study Abroad Coursework', type: 'text', placeholder: 'Enter study abroad coursework' }
+] %} #}
 
 {% block mainContent %}
   <div class="container is-max-tablet">
     <h5 class="subtitle is-4"><strong>Personal Information</strong></h5>
     <hr>
-    {% for field in personalInfoFields %}
+    {% for personalInfo in personalInfoFields %}
     <div class="field">
-      <label class="label">{{ field.label }}</label>
+      <label class="label">{{ personalInfo.label }}</label>
       <div class="control">
-        <input class="input" type="{{ field.type }}" placeholder="{{ field.placeholder }}">
+        <input class="input" type="{{ personalInfo.type }}" placeholder="{{ personalInfo.placeholder }}">
       </div>
     </div>
     {% endfor %}
   </div>
+  <br><br>
 {% endblock mainContent %}
