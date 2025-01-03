@@ -17,8 +17,11 @@ Node.js v23+ or Docker Compose.
 Clone repository and run 'npm install' to install all dependencies.<br>
 Any of the following commands can be used to run the project via Node.js:
 ```
-npm run start # equivalent to node app/index.js
-npm run dev # equivalent to nodemon app/index.js
+npm run start
+```
+or
+```
+npm run dev
 ```
 Or use the following commands in the order shown to build and start the Docker container:
 ```

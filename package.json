@@ -6,8 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node app/index.js",
-    "dev": "nodemon app/index.js",
-    "start:watch": "nodemon --inspect=0.0.0.0 --ext css,js,njk --legacy-watch app/index.js"
+    "dev": "nodemon --inspect=0.0.0.0 --ext css,js,njk --legacy-watch app/index.js"
   },
   "repository": {
     "type": "git",
