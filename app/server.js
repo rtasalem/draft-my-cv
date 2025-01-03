@@ -1,12 +1,15 @@
 import express from 'express'
 import nunjucks from 'nunjucks'
 import path from 'path'
+import { staticDirs } from './constants/index.js'
 import {
   healthy,
   healthz,
   about,
   submit,
-  download
+  download,
+  issues,
+  disclaimer
 } from './routes/index.js'
 
 const server = async () => {
@@ -21,13 +24,18 @@ const server = async () => {
   app.set('view engine', 'njk')
 
   const __dirname = path.dirname(new URL(import.meta.url).pathname)
-  app.use('/utils', express.static(path.join(__dirname, 'utils')))
+
+  staticDirs.forEach(({ route, dir }) => {
+    app.use(route, express.static(path.join(__dirname, dir)))
+  })
 
   app.use(healthy)
   app.use(healthz)
   app.use(about)
   app.use(submit)
   app.use(download)
+  app.use(issues)
+  app.use(disclaimer)
 
   app.listen(port, () => {
     console.log(`Application listening on http://localhost:${port}`)

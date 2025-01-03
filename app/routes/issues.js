@@ -1,8 +1,8 @@
 import express from 'express'
 const router = express.Router()
 
-router.get('/healthz', (req, res) => {
-  res.send('draft-my-cv is ok')
+router.get('/issues', (req, res) => {
+  res.render('issues')
 })
 
 export default router

@@ -1,3 +1,27 @@
 {% extends 'layout.njk' %}
 
 {% set title = 'Download' %}
+
+{% set fileTypes = [
+    { title: 'Word Document', buttonClass: 'is-link', icon: 'fa-solid fa-file-word' },
+    { title: 'PDF File', buttonClass: 'is-danger', icon: 'fa-solid fa-file-pdf' }
+] %}
+
+{% block mainContent %}
+  <div class="container is-max-widescreen">
+    <h5 class="subtitle is-4"><strong>Download</strong></h5>
+    <hr>
+    <div class="buttons is-centered">
+      <p class="buttons">
+        {% for fileType in fileTypes %}
+        <button class="button {{ fileType.buttonClass }} is-large">
+          <span class="icon is-dark">
+            <i class="{{ fileType.icon }}"></i>
+          </span>
+          <span>{{ fileType.title }}</span>
+        </button>
+        {% endfor %}
+      </p>
+    </div>
+  </div>
+{% endblock mainContent %}

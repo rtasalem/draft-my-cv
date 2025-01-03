@@ -3,11 +3,15 @@ import healthz from './healthz.js'
 import about from './about.js'
 import submit from './submit.js'
 import download from './download.js'
+import issues from './issues.js'
+import disclaimer from './disclaimer.js'
 
 export {
   healthy,
   healthz,
   about,
   submit,
-  download
+  download,
+  issues,
+  disclaimer
 }

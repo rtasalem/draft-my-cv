@@ -1,1 +1,25 @@
 {% extends 'layout.njk' %}
+
+{% set personalInfoFields = [
+  { label: 'Full Name', type: 'text', placeholder: 'Enter your full name' },
+  { label: 'City', type: 'text', placeholder: 'Enter your city' },
+  { label: 'Country', type: 'text', placeholder: 'Enter your country' },
+  { label: 'Email Address', type: 'text', placeholder: 'Enter your email address' },
+  { label: 'Phone Number', type: 'text', placeholder: 'Enter your phone number' }
+] %}
+
+{% block mainContent %}
+  <div class="container is-max-tablet">
+    <h5 class="subtitle is-4"><strong>Personal Information</strong></h5>
+    <hr>
+    {% for personalInfo in personalInfoFields %}
+    <div class="field">
+      <label class="label">{{ personalInfo.label }}</label>
+      <div class="control">
+        <input class="input" type="{{ personalInfo.type }}" placeholder="{{ personalInfo.placeholder }}">
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <br><br>
+{% endblock mainContent %}
