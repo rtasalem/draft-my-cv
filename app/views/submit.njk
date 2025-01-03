@@ -1,56 +1,24 @@
 {% extends 'layout.njk' %}
 
+{% set fields = [
+  { label: 'Full Name', type: 'text', placeholder: 'Enter your full name' },
+  { label: 'City', type: 'text', placeholder: 'Enter your city' },
+  { label: 'Country', type: 'text', placeholder: 'Enter your country' },
+  { label: 'Email Address', type: 'text', placeholder: 'Enter your email address' },
+  { label: 'Phone Number', type: 'number', placeholder: 'Enter your phone number' }
+] %}
+
 {% block mainContent %}
   <div class="container is-max-tablet">
     <h5 class="subtitle is-4"><strong>Personal Information</strong></h5>
     <hr>
+    {% for field in fields %}
     <div class="field">
-      <label class="label">Full Name</label>
+      <label class="label">{{ field.label }}</label>
       <div class="control">
-        <input class="input" type="text" placeholder="Enter your full name">
+        <input class="input" type="{{ field.type }}" placeholder="{{ field.placeholder }}">
       </div>
     </div>
-
-    <div class="field">
-      <label class="label">Street Address</label>
-      <div class="control">
-        <input class="input" type="text" placeholder="Enter your full name">
-      </div>
-    </div>
-
-    <div class="field">
-      <label class="label">City</label>
-      <div class="control">
-        <input class="input" type="text" placeholder="Enter your full name">
-      </div>
-    </div>
-
-    <div class="field">
-      <label class="label">Country</label>
-      <div class="control">
-        <input class="input" type="text" placeholder="Enter your full name">
-      </div>
-    </div>
-
-    <div class="field">
-      <label class="label">Postcode</label>
-      <div class="control">
-        <input class="input" type="text" placeholder="Enter your full name">
-      </div>
-    </div>
-
-    <div class="field">
-      <label class="label">Email Address</label>
-      <div class="control">
-        <input class="input" type="text" placeholder="Enter your email address">
-      </div>
-    </div>
-
-    <div class="field">
-      <label class="label">Phone Number</label>
-      <div class="control">
-        <input class="input" type="text" placeholder="Enter your email address">
-      </div>
-    </div>
+    {% endfor %}
   </div>
 {% endblock mainContent %}
