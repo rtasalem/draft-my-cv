@@ -6,12 +6,6 @@
 
 ] %}
 
-{% set navItemsEnd = [
-    { title: 'GitHub', url: 'https://github.com/rtasalem', icon: 'fab fa-github' },
-    { title: 'Portfolio', url: 'http://ranasalem.io/', icon: 'fa-solid fa-globe' },
-    { title: 'LinkedIn', url: 'https://www.linkedin.com/in/ranatasalem/', icon: 'fa-brands fa-linkedin' }
-] %}
-
 <section class="hero is-small">
   <div class="hero-head">
     <nav class="navbar">
@@ -31,18 +25,8 @@
 
           <div class="navbar-end">
             <div class="navbar-brand">
-              <p class="navbar-item">Developed by Rana Salem</p>
+              <a href="http://ranasalem.io/" target="_blank" class="navbar-item">Developed by Rana Salem</a>
             </div>
-            <p class="buttons">
-            {% for navItem in navItemsEnd %}
-              <a href="{{ navItem.url }}" class="button is-black" target="_blank">
-                <span class="icon">
-                  <i class="{{ navItem.icon }}"></i>
-                </span>
-                <span>{{ navItem.title }}</span>
-              </a>
-            {% endfor %}
-            </p>
           </div>
         </div>
       </div>
