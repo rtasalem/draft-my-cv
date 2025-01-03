@@ -3,19 +3,28 @@ Status: WIP<br>
 
 A CV (resume) generator that takes in information such as contact details, education, work experience, projects and builds a ready to download CV using the [University of Harvard's Mignone Center for Career Success Bullet Point Resume Template](https://careerservices.fas.harvard.edu/resources/bullet-point-resume-template/), often regarded as one of the best CV/resume templates.
 
-Once your CV has been generated, you can download it as a Word document or a PDF, ready to submit alongside any job or internship applications.
+Once your CV has been generated you can download it as a Word document or a PDF, ready to submit alongside any job or internship applications.
 
 This application is intended to cut down the time taken to create a structured, clear, and well-crafted CV for anyone who is currently job hunting. Good luck!
-
-## Project Stack
 
 ## Features
 TBC
 
-## Getting Started
+## Prequisites
+Node.js v23+ or Docker Compose.
 
-### Prequisites
-TBC
+## Getting Started
+Clone repository and run 'npm install' to install all dependencies.<br>
+Any of the following commands can be used to run the project via Node.js:
+```
+npm run start # equivalent to node app/index.js
+npm run dev # equivalent to nodemon app/index.js
+```
+Or use the following commands in the order shown to build and start the Docker container:
+```
+docker compose build
+docker compose up -d
+```
 
 ## License
 See the [LICENSE](/LICENSE.md) file for license rights and limitations ([MIT](https://opensource.org/license/mit)).
