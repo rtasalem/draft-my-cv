@@ -2,6 +2,7 @@ import express from 'express'
 import nunjucks from 'nunjucks'
 import path from 'path'
 import { staticDirs } from './constants/index.js'
+import { setupBodyParser } from './middlewares/index.js'
 import {
   healthy,
   healthz,
@@ -22,6 +23,8 @@ const server = async () => {
   })
 
   app.set('view engine', 'njk')
+
+  setupBodyParser(app)
 
   const __dirname = path.dirname(new URL(import.meta.url).pathname)
 

@@ -1,25 +1,42 @@
 {% extends 'layout.njk' %}
 
 {% set personalInfoFields = [
-  { label: 'Full Name', type: 'text', placeholder: 'Enter your full name' },
-  { label: 'City', type: 'text', placeholder: 'Enter your city' },
-  { label: 'Country', type: 'text', placeholder: 'Enter your country' },
-  { label: 'Email Address', type: 'text', placeholder: 'Enter your email address' },
-  { label: 'Phone Number', type: 'text', placeholder: 'Enter your phone number' }
+  { label: 'Full Name', id: 'full-name', name: 'fullName', type: 'text', placeholder: 'Enter your full name' },
+  { label: 'City', id: 'city', name: 'city', type: 'text', placeholder: 'Enter your city' },
+  { label: 'Country', id: 'country', name: 'country', type: 'text', placeholder: 'Enter your country' },
+  { label: 'Email Address', id: 'email-address', name: 'emailAddress', type: 'email', placeholder: 'Enter your email address' },
+  { label: 'Phone Number', id: 'phone-number', name: 'phoneNumber', type: 'tel', placeholder: 'Enter your phone number' }
 ] %}
 
 {% block mainContent %}
   <div class="container is-max-tablet">
     <h5 class="subtitle is-4"><strong>Personal Information</strong></h5>
     <hr>
-    {% for personalInfo in personalInfoFields %}
-    <div class="field">
-      <label class="label">{{ personalInfo.label }}</label>
-      <div class="control">
-        <input class="input" type="{{ personalInfo.type }}" placeholder="{{ personalInfo.placeholder }}">
+
+    <form action="/download" method="POST">
+      {% for personalInfo in personalInfoFields %}
+      <div class="field">
+        <label class="label">{{ personalInfo.label }}</label>
+        <div class="control">
+          <input 
+            class="input" 
+            id="{{ personalInfo.id }}" 
+            name="{{ personalInfo.name }}" 
+            type="{{ personalInfo.type }}" 
+            placeholder="{{ personalInfo.placeholder }}"
+            required>
+        </div>
       </div>
-    </div>
-    {% endfor %}
+      {% endfor %}
+
+      <div class="buttons is-right mt-4">
+        <button class="button is-success" type="submit">
+          <span class="icon">
+            <i class="fa-solid fa-check"></i>
+          </span>
+          <span>Submit</span>
+        </button>
+      </div>
+    </form>
   </div>
-  <br><br>
 {% endblock mainContent %}
