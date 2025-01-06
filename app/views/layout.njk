@@ -19,7 +19,7 @@
   </head>
 
   <body class="is-flex is-flex-direction-column" style="min-height: 100vh;">
-    {% include 'components/hero-navbar.njk' %}
+    {% include 'partials/navbar.njk' %}
 
     <main class="is-flex-grow-1">
       {% block mainContent %}{% endblock %}
@@ -27,6 +27,6 @@
   </body>
 
   <footer>
-    {% include 'components/footer.njk' %}
+    {% include 'partials/footer.njk' %}
   </footer>
 </html>
