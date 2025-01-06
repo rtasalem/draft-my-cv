@@ -4,8 +4,7 @@ import path from 'path'
 import { staticDirs } from './constants/index.js'
 import { setupBodyParser } from './middlewares/index.js'
 import {
-  healthy,
-  healthz,
+  health,
   about,
   submit,
   download,
@@ -32,8 +31,7 @@ const server = async () => {
     app.use(route, express.static(path.join(__dirname, dir)))
   })
 
-  app.use(healthy)
-  app.use(healthz)
+  app.use(health)
   app.use(about)
   app.use(submit)
   app.use(download)
