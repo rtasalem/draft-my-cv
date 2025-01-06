@@ -11,10 +11,12 @@ This application is intended to cut down the time taken to create a structured, 
 TBC
 
 ## Prequisites
-Node.js v23+ or Docker Compose.
+Node.js v23+ <br>
+or <br> 
+Docker Compose.
 
 ## Getting Started
-Clone repository and run 'npm install' to install all dependencies.<br>
+Clone repository and run `npm install` to install all dependencies.<br>
 Any of the following commands can be used to run the project via Node.js:
 ```
 npm run start
