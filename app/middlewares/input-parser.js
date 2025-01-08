@@ -1,8 +1,8 @@
 import bodyParser from 'body-parser'
 
-const setupBodyParser = (app) => {
+const inputParser = (app) => {
   app.use(bodyParser.urlencoded({ extended: true }))
   app.use(bodyParser.json())
 }
 
-export default setupBodyParser
+export default inputParser

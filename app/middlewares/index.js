@@ -1,5 +1,5 @@
-import setupBodyParser from './setup-body-parser.js'
+import inputParser from './input-parser.js'
 
 export {
-  setupBodyParser
+  inputParser
 }
