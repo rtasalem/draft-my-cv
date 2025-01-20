@@ -7,7 +7,6 @@ import {
   health,
   about,
   submit,
-  download,
   issues,
   disclaimer
 } from './routes/index.js'
@@ -34,7 +33,6 @@ const server = async () => {
   app.use(health)
   app.use(about)
   app.use(submit)
-  app.use(download)
   app.use(issues)
   app.use(disclaimer)
 

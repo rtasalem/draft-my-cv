@@ -3,8 +3,8 @@
 {% set title = 'Download' %}
 
 {% set fileTypes = [
-    { title: 'Word Document', buttonClass: 'is-link', icon: 'fa-solid fa-file-word' },
-    { title: 'PDF File', buttonClass: 'is-danger', icon: 'fa-solid fa-file-pdf' }
+    { title: 'PDF File', buttonClass: 'is-danger', action: '/generate-pdf', icon: 'fa-solid fa-file-pdf' },
+    { title: 'Word Document', buttonClass: 'is-link', action: '/generate-word', icon: 'fa-solid fa-file-word' }
 ] %}
 
 {% block mainContent %}
@@ -14,12 +14,14 @@
     <div class="buttons is-centered">
       <p class="buttons">
         {% for fileType in fileTypes %}
-        <button class="button {{ fileType.buttonClass }} is-large">
-          <span class="icon is-dark">
-            <i class="{{ fileType.icon }}"></i>
-          </span>
-          <span>{{ fileType.title }}</span>
-        </button>
+        <form action="{{ fileType.action }}" method="GET" style="display: inline;">
+          <button class="button {{ fileType.buttonClass }} is-large">
+            <span class="icon is-dark">
+              <i class="{{ fileType.icon }}"></i>
+            </span>
+            <span>{{ fileType.title }}</span>
+          </button>
+        </form>
         {% endfor %}
       </p>
     </div>
