@@ -8,6 +8,18 @@
   { label: 'Phone Number', id: 'phone-number', name: 'phoneNumber', type: 'tel', placeholder: 'Enter your phone number' }
 ] %}
 
+{% set educationFields = [
+  { label: 'Univeristy (undergraduate)', subLabel: 'Degree (undergraduate)', id: 'undergraduate-university', name: 'undergraduateUniversity', type: 'text', placeholder: 'Enter the name of the university you attended as an undergraduate', subPlaceholder: 'Enter the name of your undergraduate degree' },
+  { label: 'Univeristy (postgraduate)', subLabel: 'Degree (postgraduate)', id: 'postgraduate-university', name: 'postgraduateUniversity', type: 'text', placeholder: 'Enter the name of the university you attended as a postgraduate (if applicable)', subPlaceholder: 'Enter the name of your postgraduate degree' },
+  { label: 'Study Abroad', subLabel: 'Programme', id: 'study-abroad', name: 'studyAbroad', type: 'text', placeholder: 'Enter the name of the university you attended as an exchange student (if applicable)', subPlaceholder: 'Enter the name of the programme you completed as an exchange student' },
+  { label: 'High School', subLabel: 'Additional Information (optional)', id: 'high-school', name: 'highSchool', type: 'text', placeholder: 'Enter the name of the high school you attended', subPlaceholder: 'Enter any additional information about the high school you attended' }
+] %}
+
+{% set workExperienceFields = [
+  { label: 'Most Recent Job Position', id: 'recent-position-1', name: 'recentPosition1', type: 'text', placeholder: 'Enter your most recent position (or the most recent relevent position)' },
+  { label: 'Second Most Recent Job Position', id: 'recent-position-2', name: 'recentPosition2', type: 'text', placeholder: 'Enter your second most recent position (or the second most recent position)' }
+] %}
+
 {% block mainContent %}
   <div class="container is-max-tablet">
     <h5 class="subtitle is-4"><strong>Personal Information</strong></h5>
@@ -24,6 +36,56 @@
             name="{{ personalInfo.name }}" 
             type="{{ personalInfo.type }}" 
             placeholder="{{ personalInfo.placeholder }}"
+            required>
+        </div>
+      </div>
+      {% endfor %}
+
+    <br>
+    <h5 class="subtitle is-4"><strong>Education (optional)</strong></h5>
+    <hr>
+
+      {% for education in educationFields %}
+      <div class="field">
+        <label class="label">{{ education.label }}</label>
+        <div class="control">
+          <input 
+            class="input" 
+            id="{{ education.id }}" 
+            name="{{ education.name }}" 
+            type="{{ education.type }}" 
+            placeholder="{{ education.placeholder }}"
+            />
+            <br>
+            <br>
+            <div class="field">
+              <label class="label is-small">{{ education.subLabel }}</label>
+              <div class="control">
+                <input
+                class="input is-small"
+                type="{{ education.type }}"
+                placeholder="{{ education.subPlaceholder }}"
+                />
+              </div>
+            </div>
+        </div>
+      </div>
+      {% endfor %}
+
+    <br>
+    <h5 class="subtitle is-4"><strong>Work Experience</strong></h5>
+    <hr>
+
+      {% for workExperience in workExperienceFields %}
+      <div class="field">
+        <label class="label">{{ workExperience.label }}</label>
+        <div class="control">
+          <input 
+            class="input" 
+            id="{{ workExperience.id }}" 
+            name="{{ workExperience.name }}" 
+            type="{{ workExperience.type }}" 
+            placeholder="{{ workExperience.placeholder }}"
             required>
         </div>
       </div>
