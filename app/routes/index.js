@@ -4,6 +4,7 @@ import submit from './submit.js'
 import download from './download.js'
 import issues from './issues.js'
 import disclaimer from './disclaimer.js'
+import submit2 from './submit2.js'
 
 export {
   health,
@@ -11,5 +12,6 @@ export {
   submit,
   download,
   issues,
-  disclaimer
+  disclaimer,
+  submit2
 }
