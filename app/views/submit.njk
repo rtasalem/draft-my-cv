@@ -16,8 +16,15 @@
 ] %}
 
 {% set workExperienceFields = [
-  { label: 'Most Recent Job Position', id: 'recent-position-1', name: 'recentPosition1', type: 'text', placeholder: 'Enter your most recent position (or the most recent relevent position)' },
-  { label: 'Second Most Recent Job Position', id: 'recent-position-2', name: 'recentPosition2', type: 'text', placeholder: 'Enter your second most recent position (or the second most recent position)' }
+  { label: 'Most Recent Job Position', subLabel: 'Description', id: 'recent-position-1', name: 'recentPosition1', type: 'text', placeholder: 'Enter your most recent position (or the most recent relevent position)', subPlaceholder: 'In 1-2 sentences describe you responsibilities and achievements in this role' },
+  { label: 'Second Most Recent Job Position', subLabel: 'Description', id: 'recent-position-2', name: 'recentPosition2', type: 'text', placeholder: 'Enter your second most recent position (or the second most recent position)', subPlaceholder: 'In 1-2 sentences describe you responsibilities and achievements in this role' },
+  { label: 'Third Most Recent Job Position', subLabel: 'Description', id: 'recent-position-3', name: 'recentPosition3', type: 'text', placeholder: 'Enter your second most recent position (or the second most recent position)', subPlaceholder: 'In 1-2 sentences describe you responsibilities and achievements in this role' }
+] %}
+
+{% set Interest = [
+  { label: 'Interests', id: 'interest-1', name: 'interest', type: 'text', placeholder: 'List one of your interests outside of work' },
+  { label: 'Second Most Recent Job Position', subLabel: 'Description', id: 'recent-position-2', name: 'recentPosition2', type: 'text', placeholder: 'Enter your second most recent position (or the second most recent position)', subPlaceholder: 'In 1-2 sentences describe you responsibilities and achievements in this role' },
+  { label: 'Third Most Recent Job Position', subLabel: 'Description', id: 'recent-position-3', name: 'recentPosition3', type: 'text', placeholder: 'Enter your second most recent position (or the second most recent position)', subPlaceholder: 'In 1-2 sentences describe you responsibilities and achievements in this role' }
 ] %}
 
 {% block mainContent %}
@@ -28,7 +35,7 @@
     <form action="/download" method="POST" style="display: inline;">
       {% for personalInfo in personalInfoFields %}
       <div class="field">
-        <label class="label">{{ personalInfo.label }}</label>
+        <label class="label is-medium">{{ personalInfo.label }}</label>
         <div class="control">
           <input 
             class="input" 
@@ -47,7 +54,7 @@
 
       {% for education in educationFields %}
       <div class="field">
-        <label class="label">{{ education.label }}</label>
+        <label class="label is-medium">{{ education.label }}</label>
         <div class="control">
           <input 
             class="input" 
@@ -59,10 +66,10 @@
             <br>
             <br>
             <div class="field">
-              <label class="label is-small">{{ education.subLabel }}</label>
+              <label class="label">{{ education.subLabel }}</label>
               <div class="control">
                 <input
-                class="input is-small"
+                class="input"
                 type="{{ education.type }}"
                 placeholder="{{ education.subPlaceholder }}"
                 />
@@ -78,7 +85,7 @@
 
       {% for workExperience in workExperienceFields %}
       <div class="field">
-        <label class="label">{{ workExperience.label }}</label>
+        <label class="label is-medium">{{ workExperience.label }}</label>
         <div class="control">
           <input 
             class="input" 
@@ -86,10 +93,62 @@
             name="{{ workExperience.name }}" 
             type="{{ workExperience.type }}" 
             placeholder="{{ workExperience.placeholder }}"
-            required>
+            required
+            />
+            <br>
+            <div class="field">
+              <label class="label">{{ workExperience.subLabel }}</label>
+              <div class="control">
+                <input
+                class="input"
+                type="{{ workExperience.type }}"
+                placeholder="{{ workExperience.subPlaceholder }}"
+                />
+              </div>
         </div>
       </div>
       {% endfor %}
+
+    <br>
+    <h5 class="subtitle is-4"><strong>Interests</strong></h5>
+    <hr>
+
+      <div class="field">
+        <div class="control">
+          <input 
+            class="input" 
+            id="interest" 
+            name="interest" 
+            type="text" 
+            placeholder="List one of your interests outside of work"
+            required
+            />
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <input 
+            class="input" 
+            id="interest" 
+            name="interest" 
+            type="text" 
+            placeholder="List one of your interests outside of work"
+            required
+            />
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <input 
+            class="input" 
+            id="interest" 
+            name="interest" 
+            type="text" 
+            placeholder="List one of your interests outside of work"
+            required
+            />
+        </div>
+      </div>
 
       <div class="buttons is-right mt-4">
         <button class="button is-success" type="submit">
@@ -99,6 +158,7 @@
           <span>Submit</span>
         </button>
       </div>
+      <br>
     </form>
   </div>
 {% endblock mainContent %}
