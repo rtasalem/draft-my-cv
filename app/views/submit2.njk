@@ -1,80 +1,362 @@
 {% extends 'layout.njk' %}
 
-
-{# {% set personalInfoFields = [
-  { label: 'First/Given Names', id: 'first-name', name: 'firstName', type: 'text', placeholder: 'Enter your first & middle names' },
-  { label: 'Last Name', id: 'last-name', name: 'lastName', type: 'text', placeholder: 'Enter you last name'}
-  { label: 'City or State', id: 'city-or-state', name: 'cityOrState', type: 'text', placeholder: 'Enter the city or state in which you currently live' },
-  { label: 'Country', id: 'country', name: 'country', type: 'text', placeholder: 'Enter the country in which you currently live' },
-  { label: 'Email Address', id: 'email-address', name: 'emailAddress', type: 'email', placeholder: 'Enter your email address' },
-  { label: 'Phone Number', id: 'phone-number', name: 'phoneNumber', type: 'tel', placeholder: 'Enter your phone number' }
-] %} #}
-
 {% block mainContent %}
 <div class="container is-max-tablet">
-    <h5 class="subtitle is-4"><strong>Personal Information</strong></h5>
-    <hr>
+  <form action="/download" method="POST" style="display: inline;">
 
-    <form action="/download" method="POST" style="display: inline;">
+  <h5 class="subtitle is-4"><strong>Personal Information</strong></h5>
+  <hr>
 
-    <div class="field is-grouped">
-      <p class="control is-expanded has-icons-left">
-        <input class="input" type="text" placeholder="First/Given Names">
+  <div class="field is-grouped">
+    <p class="control is-expanded has-icons-left">
+      <input class="input" type="text" placeholder="First/Given Names">
+      <span class="icon is-small is-left">
+        <i class="fas fa-user"></i>
+      </span>
+    </p>
+
+    <p class="control is-expanded has-icons-left">
+      <input class="input" type="text" placeholder="Last Name">
+      <span class="icon is-small is-left">
+        <i class="fas fa-users"></i>
+      </span>
+    </p>
+  </div>
+
+  <div class="field is-grouped">
+    <p class="control is-expanded has-icons-left">
+      <input class="input" type="text" placeholder="City or State">
+      <span class="icon is-small is-left">
+        <i class="fa-solid fa-city"></i>
+      </span>
+    </p>
+
+    <p class="control has-icons-left">
+      <span class="select">
+        <select>
+          <option selected>Country</option>
+          <option>Select dropdown</option>
+          <option>With options</option>
+        </select>
+      </span>
+      <span class="icon is-small is-left">
+        <i class="fa-solid fa-earth-europe"></i>
+      </span>
+    </p>
+  </div>
+
+  <div class="field is-grouped">
+    <p class="control is-expanded has-icons-left">
+      <input class="input" type="text" placeholder="Email Address">
+      <span class="icon is-small is-left">
+        <i class="fa-solid fa-envelope"></i>
+      </span>
+    </p>
+
+    <div class="mb-5">
+      <p class="control has-icons-left">
+        <input class="input" type="tel" placeholder="Phone Number">
         <span class="icon is-small is-left">
-          <i class="fas fa-user"></i>
+          <i class="fa-solid fa-phone"></i>
         </span>
       </p>
-
-      <p class="control is-expanded has-icons-left">
-        <input class="input" type="text" placeholder="Last Name">
-        <span class="icon is-small is-left">
-          <i class="fas fa-users"></i>
-        </span>
-      </p>
+      <p class="help">Please specify the area code e.g. +44</p>
     </div>
+  </div>
+  
+  <h5 class="subtitle is-4"><strong>Education (optional)</strong></h5>
+  <hr>
 
+  <div class="mb-5">
+    <h5 class="subtitle is-5"><strong>Undergraduate</strong></h5>
+  
     <div class="field is-grouped">
       <p class="control is-expanded has-icons-left">
+        <input class="input" type="text" placeholder="University">
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </span>
+      </p>
+
+      <p class="control has-icons-left">
         <input class="input" type="text" placeholder="City or State">
         <span class="icon is-small is-left">
           <i class="fa-solid fa-city"></i>
         </span>
       </p>
-
-      <p class="control has-icons-left">
-          <span class="select">
-            <select>
-              <option selected>Country</option>
-              <option>Select dropdown</option>
-              <option>With options</option>
-            </select>
-          </span>
-          <span class="icon is-small is-left">
-            <i class="fa-solid fa-earth-europe"></i>
-          </span>
-        </p>
     </div>
 
     <div class="field is-grouped">
       <p class="control is-expanded has-icons-left">
-        <input class="input" type="text" placeholder="Email Address">
+        <input class="input" type="text" placeholder="Degree">
         <span class="icon is-small is-left">
-          <i class="fa-solid fa-envelope"></i>
+          <i class="fa-solid fa-scroll"></i>
         </span>
       </p>
 
-      <div class="mb-4">
+      <p class="control has-icons-left">
+        <input class="input" type="tel" placeholder="Graduation Year">
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-calendar"></i>
+        </span>
+      </p>
+    </div>
+
+    <div class="field is-grouped">
+      <p class="control is-expanded has-icons-left">
+        <input class="input" type="tel" placeholder="Dissertation Title">
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-pen-nib"></i>
+        </span>
+      </p>
+
+      <p class="control has-icons-left">
+        <input class="input" type="tel" placeholder="Grade">
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-star"></i>
+        </span>
+      </p>
+    </div>
+  <div/>
+  
+  <div class="mb-5">
+    <h5 class="subtitle is-5"><strong>Postgraduate</strong></h5>
+  
+    <div class="field is-grouped">
+      <p class="control is-expanded has-icons-left">
+        <input class="input" type="text" placeholder="University">
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </span>
+      </p>
+
+      <p class="control has-icons-left">
+        <input class="input" type="text" placeholder="City or State">
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-city"></i>
+        </span>
+      </p>
+    </div>
+
+    <div class="field is-grouped">
+      <p class="control is-expanded has-icons-left">
+        <input class="input" type="text" placeholder="Degree">
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-scroll"></i>
+        </span>
+      </p>
+
+      <p class="control has-icons-left">
+        <input class="input" type="tel" placeholder="Graduation Year">
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-calendar"></i>
+        </span>
+      </p>
+    </div>
+
+    <div class="field is-grouped">
+      <p class="control is-expanded has-icons-left">
+        <input class="input" type="tel" placeholder="Dissertation Title">
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-pen-nib"></i>
+        </span>
+      </p>
+
+      <p class="control has-icons-left">
+        <input class="input" type="tel" placeholder="Grade">
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-star"></i>
+        </span>
+      </p>
+    </div>
+  </div>
+
+  <div class="mb-5">
+    <h5 class="subtitle is-5"><strong>Study Abroad</strong></h5>
+  
+    <div class="field is-grouped">
+      <p class="control is-expanded has-icons-left">
+        <input class="input" type="text" placeholder="University">
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </span>
+      </p>
+
+      <p class="control has-icons-left">
+        <input class="input" type="text" placeholder="City or State">
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-city"></i>
+        </span>
+      </p>
+    </div>
+
+    <div class="field is-grouped">
+      <p class="control is-expanded has-icons-left">
+        <input class="input" type="text" placeholder="Degree/Programme">
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-scroll"></i>
+        </span>
+
         <p class="control has-icons-left">
-          <input class="input" type="tel" placeholder="Phone Number">
+          <input class="input" type="tel" placeholder="Year">
           <span class="icon is-small is-left">
-            <i class="fa-solid fa-phone"></i>
+            <i class="fa-solid fa-calendar"></i>
           </span>
         </p>
-        <p class="help">Please specify the area code e.g. +44</p>
-      </div>
     </div>
-    
-    <h5 class="subtitle is-4"><strong>Education (optional)</strong></h5>
-    <hr>
+  </div>
+
+  <div class="mb-6">
+    <h5 class="subtitle is-5"><strong>High School</strong></h5>
+  
+    <div class="field is-grouped">
+      <p class="control is-expanded has-icons-left">
+        <input class="input" type="text" placeholder="School">
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </span>
+      </p>
+
+      <p class="control has-icons-left">
+        <input class="input" type="tel" placeholder="Year">
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-calendar"></i>
+        </span>
+      </p>
+    </div>
+  </div>
+
+  <h5 class="subtitle is-4"><strong>Work Experience</strong></h5>
+  <hr>
+
+  <div class="mb-5">
+    <h5 class="subtitle is-5"><strong>Most Recent Job Position</strong></h5>
+  
+    <div class="field">
+      <p class="control is-expanded has-icons-left">
+        <input class="input" type="text" placeholder="Job Title">
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-briefcase"></i>
+        </span>
+      </p>
+    </div>
+
+    <div class="field is-grouped">
+      <p class="control is-expanded has-icons-left">
+        <input class="input" type="tel" placeholder="Start">
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-calendar"></i>
+        </span>
+      </p>
+
+      <p class="control is-expanded has-icons-left">
+        <input class="input" type="tel" placeholder="End">
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-calendar"></i>
+        </span>
+      </p>
+    </div>
+
+    <textarea class="textarea" placeholder="Please provide a brief (100-200 words max.) of the responsibilties, achievements, or statistics of your most recent job position."></textarea>
+  </div>
+
+  <div class="mb-5">
+    <h5 class="subtitle is-5"><strong>Second Most Recent Job Position</strong></h5>
+  
+    <div class="field">
+      <p class="control is-expanded has-icons-left">
+        <input class="input" type="text" placeholder="Job Title">
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-briefcase"></i>
+        </span>
+      </p>
+    </div>
+
+    <div class="field is-grouped">
+      <p class="control is-expanded has-icons-left">
+        <input class="input" type="tel" placeholder="Start">
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-calendar"></i>
+        </span>
+      </p>
+
+      <p class="control is-expanded has-icons-left">
+        <input class="input" type="tel" placeholder="End">
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-calendar"></i>
+        </span>
+      </p>
+    </div>
+
+    <textarea class="textarea" placeholder="Please provide a brief (100-200 words max.) of the responsibilties, achievements, or statistics of your second most recent job position."></textarea>
+  </div>
+  
+  <div class="mb-6">
+    <h5 class="subtitle is-5"><strong>Third Most Recent Job Position</strong></h5>
+  
+    <div class="field">
+      <p class="control is-expanded has-icons-left">
+        <input class="input" type="text" placeholder="Job Title">
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-briefcase"></i>
+        </span>
+      </p>
+    </div>
+
+    <div class="field is-grouped">
+      <p class="control is-expanded has-icons-left">
+        <input class="input" type="tel" placeholder="Start">
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-calendar"></i>
+        </span>
+      </p>
+
+      <p class="control is-expanded has-icons-left">
+        <input class="input" type="tel" placeholder="End">
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-calendar"></i>
+        </span>
+      </p>
+    </div>
+
+    <textarea class="textarea" placeholder="Please provide a brief (100-200 words max.) of the responsibilties, achievements, or statistics of your third most recent job position."></textarea>
+  </div>
+
+  <h5 class="subtitle is-4"><strong>Interests</strong></h5>
+  <hr>
+
+  <div class="field is-grouped">
+    <p class="control is-expanded has-icons-left">
+      <input class="input" type="tel" placeholder="Your first interest or hobby">
+      <span class="icon is-small is-left">
+        <i class="fa-solid fa-1"></i>
+      </span>
+    </p>
+
+    <p class="control is-expanded has-icons-left">
+      <input class="input" type="tel" placeholder="Your second interest or hobby">
+      <span class="icon is-small is-left">
+        <i class="fa-solid fa-2"></i>
+      </span>
+    </p>
+  </div>
+
+  <div class="field is-grouped">
+    <p class="control is-expanded has-icons-left">
+      <input class="input" type="tel" placeholder="Your third interest or hobby">
+      <span class="icon is-small is-left">
+        <i class="fa-solid fa-3"></i>
+      </span>
+    </p>
+
+    <p class="control is-expanded has-icons-left">
+      <input class="input" type="tel" placeholder="Your fourth interest or hobby">
+      <span class="icon is-small is-left">
+        <i class="fa-solid fa-4"></i>
+      </span>
+    </p>
+  </div>
+
+<div/>
 
 {% endblock mainContent %}
