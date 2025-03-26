@@ -8,7 +8,7 @@ import {
   about,
   submit,
   issues,
-  disclaimer,
+  // disclaimer,
   submit2
 } from './routes/index.js'
 
@@ -35,7 +35,7 @@ const server = async () => {
   app.use(about)
   app.use(submit)
   app.use(issues)
-  app.use(disclaimer)
+  // app.use(disclaimer)
   app.use(submit2)
 
   app.listen(port, () => {
