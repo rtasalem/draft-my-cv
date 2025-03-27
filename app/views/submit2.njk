@@ -9,14 +9,28 @@
 
   <div class="field is-grouped">
     <p class="control is-expanded has-icons-left">
-      <input class="input" type="text" placeholder="First/Given Names">
+      <input 
+        class="input" 
+        id="first-given-names" 
+        name="fistGivenNames" 
+        type="text" 
+        placeholder="First/Given Names" 
+        required
+      >
       <span class="icon is-small is-left">
         <i class="fas fa-user"></i>
       </span>
     </p>
 
     <p class="control is-expanded has-icons-left">
-      <input class="input" type="text" placeholder="Last Name">
+      <input 
+        class="input" 
+        id="last-name"
+        name="lastName"
+        type="text" 
+        placeholder="Last Name"
+        required
+      >
       <span class="icon is-small is-left">
         <i class="fas fa-users"></i>
       </span>
@@ -25,7 +39,14 @@
 
   <div class="field is-grouped">
     <p class="control is-expanded has-icons-left">
-      <input class="input" type="text" placeholder="City or State">
+      <input 
+        class="input" 
+        id="city-or-state"
+        name="cityOrState"
+        type="text" 
+        placeholder="City or State"
+        required
+      >
       <span class="icon is-small is-left">
         <i class="fa-solid fa-city"></i>
       </span>
@@ -447,6 +468,15 @@
       </span>
     </p>
   </div>
-<div/>
 
+  <div class="buttons is-right mt-5 mb-6">
+    <button class="button is-success" type="submit">
+      <span class="icon">
+        <i class="fa-solid fa-check"></i>
+      </span>
+      <span>Submit</span>
+    </button>
+  </div>
+  </form>
+<div/>
 {% endblock mainContent %}
