@@ -1,163 +1,635 @@
 {% extends 'layout.njk' %}
 
-{% set personalInfoFields = [
-  { label: 'Full Name', id: 'full-name', name: 'fullName', type: 'text', placeholder: 'Enter your full name' },
-  { label: 'City', id: 'city', name: 'city', type: 'text', placeholder: 'Enter your city' },
-  { label: 'Country', id: 'country', name: 'country', type: 'text', placeholder: 'Enter your country' },
-  { label: 'Email Address', id: 'email-address', name: 'emailAddress', type: 'email', placeholder: 'Enter your email address' },
-  { label: 'Phone Number', id: 'phone-number', name: 'phoneNumber', type: 'tel', placeholder: 'Enter your phone number' }
-] %}
-
-{% set educationFields = [
-  { label: 'Univeristy (undergraduate)', subLabel: 'Degree (undergraduate)', id: 'undergraduate-university', name: 'undergraduateUniversity', type: 'text', placeholder: 'Enter the name of the university you attended as an undergraduate', subPlaceholder: 'Enter the name of your undergraduate degree' },
-  { label: 'Univeristy (postgraduate)', subLabel: 'Degree (postgraduate)', id: 'postgraduate-university', name: 'postgraduateUniversity', type: 'text', placeholder: 'Enter the name of the university you attended as a postgraduate (if applicable)', subPlaceholder: 'Enter the name of your postgraduate degree' },
-  { label: 'Study Abroad', subLabel: 'Programme', id: 'study-abroad', name: 'studyAbroad', type: 'text', placeholder: 'Enter the name of the university you attended as an exchange student (if applicable)', subPlaceholder: 'Enter the name of the programme you completed as an exchange student' },
-  { label: 'High School', subLabel: 'Additional Information (optional)', id: 'high-school', name: 'highSchool', type: 'text', placeholder: 'Enter the name of the high school you attended', subPlaceholder: 'Enter any additional information about the high school you attended' }
-] %}
-
-{% set workExperienceFields = [
-  { label: 'Most Recent Job Position', subLabel: 'Description', id: 'recent-position-1', name: 'recentPosition1', type: 'text', placeholder: 'Enter your most recent position (or the most recent relevent position)', subPlaceholder: 'In 1-2 sentences describe you responsibilities and achievements in this role' },
-  { label: 'Second Most Recent Job Position', subLabel: 'Description', id: 'recent-position-2', name: 'recentPosition2', type: 'text', placeholder: 'Enter your second most recent position (or the second most recent position)', subPlaceholder: 'In 1-2 sentences describe you responsibilities and achievements in this role' },
-  { label: 'Third Most Recent Job Position', subLabel: 'Description', id: 'recent-position-3', name: 'recentPosition3', type: 'text', placeholder: 'Enter your second most recent position (or the second most recent position)', subPlaceholder: 'In 1-2 sentences describe you responsibilities and achievements in this role' }
-] %}
-
-{% set Interest = [
-  { label: 'Interests', id: 'interest-1', name: 'interest', type: 'text', placeholder: 'List one of your interests outside of work' },
-  { label: 'Second Most Recent Job Position', subLabel: 'Description', id: 'recent-position-2', name: 'recentPosition2', type: 'text', placeholder: 'Enter your second most recent position (or the second most recent position)', subPlaceholder: 'In 1-2 sentences describe you responsibilities and achievements in this role' },
-  { label: 'Third Most Recent Job Position', subLabel: 'Description', id: 'recent-position-3', name: 'recentPosition3', type: 'text', placeholder: 'Enter your second most recent position (or the second most recent position)', subPlaceholder: 'In 1-2 sentences describe you responsibilities and achievements in this role' }
-] %}
-
 {% block mainContent %}
-  <div class="container is-max-tablet">
-    <form action="/download" method="POST" style="display: inline;">
-    <h5 class="subtitle is-4"><strong>Personal Information</strong></h5>
-    <hr>
+<div class="container is-max-tablet">
+  <form action="/download" method="POST" style="display: inline;">
 
-      {% for personalInfo in personalInfoFields %}
-      <div class="field">
-        <label class="label is-medium">{{ personalInfo.label }}</label>
-        <div class="control">
-          <input 
-            class="input" 
-            id="{{ personalInfo.id }}" 
-            name="{{ personalInfo.name }}" 
-            type="{{ personalInfo.type }}" 
-            placeholder="{{ personalInfo.placeholder }}"
-            required>
-        </div>
-      </div>
-      {% endfor %}
+  <h5 class="subtitle is-4"><strong>Personal Information</strong></h5>
+  <hr>
 
-    <br>
-    <h5 class="subtitle is-4"><strong>Education (optional)</strong></h5>
-    <hr>
+  <div class="field is-grouped">
+    <p class="control is-expanded has-icons-left">
+      <input 
+        class="input" 
+        id="first-given-names" 
+        name="fistGivenNames" 
+        type="text" 
+        placeholder="First/Given Names" 
+        required
+      >
+      <span class="icon is-small is-left">
+        <i class="fas fa-user"></i>
+      </span>
+    </p>
 
-      {% for education in educationFields %}
-      <div class="field">
-        <label class="label is-medium">{{ education.label }}</label>
-        <div class="control">
-          <input 
-            class="input" 
-            id="{{ education.id }}" 
-            name="{{ education.name }}" 
-            type="{{ education.type }}" 
-            placeholder="{{ education.placeholder }}"
-            />
-            <br>
-            <br>
-            <div class="field">
-              <label class="label">{{ education.subLabel }}</label>
-              <div class="control">
-                <input
-                class="input"
-                type="{{ education.type }}"
-                placeholder="{{ education.subPlaceholder }}"
-                />
-              </div>
-            </div>
-        </div>
-      </div>
-      {% endfor %}
-
-    <br>
-    <h5 class="subtitle is-4"><strong>Work Experience</strong></h5>
-    <hr>
-
-      {% for workExperience in workExperienceFields %}
-      <div class="field">
-        <label class="label is-medium">{{ workExperience.label }}</label>
-        <div class="control">
-          <input 
-            class="input" 
-            id="{{ workExperience.id }}" 
-            name="{{ workExperience.name }}" 
-            type="{{ workExperience.type }}" 
-            placeholder="{{ workExperience.placeholder }}"
-            required
-            />
-            <br>
-            <div class="field">
-              <label class="label">{{ workExperience.subLabel }}</label>
-              <div class="control">
-                <input
-                class="input"
-                type="{{ workExperience.type }}"
-                placeholder="{{ workExperience.subPlaceholder }}"
-                />
-              </div>
-        </div>
-      </div>
-      {% endfor %}
-
-    <br>
-    <h5 class="subtitle is-4"><strong>Interests</strong></h5>
-    <hr>
-
-      <div class="field">
-        <div class="control">
-          <input 
-            class="input" 
-            id="interest" 
-            name="interest" 
-            type="text" 
-            placeholder="List one of your interests outside of work"
-            required
-            />
-        </div>
-      </div>
-      <div class="field">
-        <div class="control">
-          <input 
-            class="input" 
-            id="interest" 
-            name="interest" 
-            type="text" 
-            placeholder="List one of your interests outside of work"
-            required
-            />
-        </div>
-      </div>
-      <div class="field">
-        <div class="control">
-          <input 
-            class="input" 
-            id="interest" 
-            name="interest" 
-            type="text" 
-            placeholder="List one of your interests outside of work"
-            required
-            />
-        </div>
-      </div>
-
-      <div class="buttons is-right mt-5 mb-6">
-        <button class="button is-success" type="submit">
-          <span class="icon">
-            <i class="fa-solid fa-check"></i>
-          </span>
-          <span>Submit</span>
-        </button>
-      </div>
-    </form>
+    <p class="control is-expanded has-icons-left">
+      <input 
+        class="input" 
+        id="last-name"
+        name="lastName"
+        type="text" 
+        placeholder="Last Name"
+        required
+      >
+      <span class="icon is-small is-left">
+        <i class="fas fa-users"></i>
+      </span>
+    </p>
   </div>
+
+  <div class="field is-grouped">
+    <p class="control is-expanded has-icons-left">
+      <input 
+        class="input" 
+        id="city-or-state"
+        name="cityOrState"
+        type="text" 
+        placeholder="City or State"
+        required
+      >
+      <span class="icon is-small is-left">
+        <i class="fa-solid fa-city"></i>
+      </span>
+    </p>
+
+    <p class="control has-icons-left">
+      <span class="select">
+        <select 
+          id="country" 
+          name="country" 
+          required
+        >
+          <option selected>Country</option>
+          <option>Select dropdown</option>
+        </select>
+      </span>
+      <span class="icon is-small is-left">
+        <i class="fa-solid fa-earth-europe"></i>
+      </span>
+    </p>
+  </div>
+
+  <div class="field is-grouped">
+    <p class="control is-expanded has-icons-left">
+      <input 
+        class="input" 
+        id="email-address"
+        name="emailAddress"
+        type="email" 
+        placeholder="Email Address"
+        required
+      >
+      <span class="icon is-small is-left">
+        <i class="fa-solid fa-envelope"></i>
+      </span>
+    </p>
+
+    <div class="mb-5">
+      <p class="control has-icons-left">
+        <input 
+          class="input" 
+          id="phone-number"
+          name="phoneNumber"
+          type="tel" 
+          placeholder="Phone Number"
+          required
+        >
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-phone"></i>
+        </span>
+      </p>
+      <p class="help">Please specify the area code e.g. +44</p>
+    </div>
+  </div>
+  
+  <h5 class="subtitle is-4"><strong>Education (optional)</strong></h5>
+  <hr>
+
+  <div class="mb-5">
+    <h5 class="subtitle is-5"><strong>Undergraduate</strong></h5>
+  
+    <div class="field is-grouped">
+      <p class="control is-expanded has-icons-left">
+        <input 
+          class="input" 
+          id="undergraduate-university"
+          name="undergraduateUniveristy"
+          type="text" 
+          placeholder="University"
+        >
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </span>
+      </p>
+
+      <p class="control has-icons-left">
+        <input 
+          class="input" 
+          id="undergraduate-city-or-state"
+          name="undergraduateCityOrState"
+          type="text" 
+          placeholder="City or State"
+        >
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-city"></i>
+        </span>
+      </p>
+    </div>
+
+    <div class="field is-grouped">
+      <p class="control is-expanded has-icons-left">
+        <input 
+          class="input"
+          id="undergraduate-degree"
+          name="undergraduateDegree"
+          type="text" 
+          placeholder="Degree"
+        >
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-scroll"></i>
+        </span>
+      </p>
+
+      <p class="control has-icons-left">
+        <input 
+          class="input"
+          id="undergraduate-graduation-year" 
+          name="undergraduateGraduationYear"
+          type="number" 
+          min="1900"
+          max="2025"
+          step="1"
+          {# need to dynamically set the maximum year to always update to the current year #}
+          placeholder="Graduation Year"
+          >
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-calendar"></i>
+        </span>
+      </p>
+    </div>
+
+    <div class="field is-grouped mb-5">
+      <p class="control is-expanded has-icons-left">
+        <input 
+          class="input" 
+          id="undergraduate-dissertation-title"
+          name="undergraduateDissertationTitle"
+          type="text" 
+          placeholder="Dissertation Title"
+        >
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-pen-nib"></i>
+        </span>
+      </p>
+
+      <p class="control has-icons-left">
+        <input 
+          class="input"  
+          id="udergraduate-grade"
+          name="undergraduateGrade"
+          type="text" 
+          placeholder="Grade"
+        >
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-star"></i>
+        </span>
+      </p>
+    </div>
+  <div/>
+  
+  <div class="mb-5">
+    <h5 class="subtitle is-5"><strong>Postgraduate</strong></h5>
+  
+    <div class="field is-grouped">
+      <p class="control is-expanded has-icons-left">
+        <input 
+          class="input" 
+          id="pg-university"
+          name="pgUniversity"
+          type="text" 
+          placeholder="University"
+        >
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </span>
+      </p>
+
+      <p class="control has-icons-left">
+        <input 
+          class="input" 
+          id="pg-city-or-state"
+          name="pgCityOrState"
+          type="text" 
+          placeholder="City or State"
+        >
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-city"></i>
+        </span>
+      </p>
+    </div>
+
+    <div class="field is-grouped">
+      <p class="control is-expanded has-icons-left">
+        <input 
+          class="input"
+          id="pg-degree"
+          name="pgDegree"
+          type="text" 
+          placeholder="Degree"
+        >
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-scroll"></i>
+        </span>
+      </p>
+
+      <p class="control has-icons-left">
+        <input 
+          class="input"
+          id="pg-graduation-year"
+          name="pgGraduationYear" 
+          type="number" 
+          min="1900"
+          max="2025"
+          step="1"
+          placeholder="Graduation Year"
+        >
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-calendar"></i>
+        </span>
+      </p>
+    </div>
+
+    <div class="field is-grouped">
+      <p class="control is-expanded has-icons-left">
+        <input 
+          class="input" 
+          id="pg-dissertation-title"
+          name="pgDissertationTitle"
+          type="text" 
+          placeholder="Dissertation Title"
+        >
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-pen-nib"></i>
+        </span>
+      </p>
+
+      <p class="control has-icons-left">
+        <input 
+          class="input"
+          id="pg-grade"
+          name="pgGrade"
+          type="text" 
+          placeholder="Grade"
+        >
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-star"></i>
+        </span>
+      </p>
+    </div>
+  </div>
+
+  <div class="mb-5">
+    <h5 class="subtitle is-5"><strong>Study Abroad (Exchange)</strong></h5>
+  
+    <div class="field is-grouped">
+      <p class="control is-expanded has-icons-left">
+        <input 
+          class="input"
+          id="exchange-university"
+          name="exchangeUniversity" 
+          type="text" 
+          placeholder="University"
+        >
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </span>
+      </p>
+
+      <p class="control has-icons-left">
+        <input 
+          class="input" 
+          id="exchange-city-or-state"
+          name="exchangeCityOrState"
+          type="text" 
+          placeholder="City or State"
+        >
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-city"></i>
+        </span>
+      </p>
+    </div>
+
+    <div class="field is-grouped">
+      <p class="control is-expanded has-icons-left">
+        <input 
+          class="input" 
+          id="exchange-degree-programme"
+          name="exchangeDegreeProgramme"
+          type="text" 
+          placeholder="Degree/Programme"
+        >
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-scroll"></i>
+        </span>
+
+        <p class="control has-icons-left">
+          <input 
+            class="input"
+            id="exchange-year"
+            name="exchangeYear" 
+            type="number" 
+            min="1900"
+            max="2025"
+            step="1"
+            placeholder="Year"
+          >
+          <span class="icon is-small is-left">
+            <i class="fa-solid fa-calendar"></i>
+          </span>
+        </p>
+    </div>
+  </div>
+
+  <div class="mb-6">
+    <h5 class="subtitle is-5"><strong>High School</strong></h5>
+  
+    <div class="field is-grouped">
+      <p class="control is-expanded has-icons-left">
+        <input 
+          class="input" 
+          id="high-school"
+          name="highSchool"
+          type="text" 
+          placeholder="School"
+        >
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </span>
+      </p>
+
+      <p class="control has-icons-left">
+        <input 
+          class="input" 
+          id="high-school-year"
+          name="highSchoolYear"
+          type="number" 
+          min="1900"
+          max="2025"
+          step="1"
+          placeholder="Year"
+        >
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-calendar"></i>
+        </span>
+      </p>
+    </div>
+  </div>
+
+  <h5 class="subtitle is-4"><strong>Work Experience</strong></h5>
+  <hr>
+
+  <div class="mb-5">
+    <h5 class="subtitle is-5"><strong>Most Recent Job Position</strong></h5>
+  
+    <div class="field">
+      <p class="control is-expanded has-icons-left">
+        <input 
+          class="input" 
+          id="job-title-1"
+          name="jobTitle1"
+          type="text" 
+          placeholder="Job Title"
+        >
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-briefcase"></i>
+        </span>
+      </p>
+    </div>
+
+    <div class="field is-grouped">
+      <p class="control is-expanded has-icons-left">
+        <input 
+          class="input"
+          id="job-start-1"   
+          name="jobStart1"
+          type="text" 
+          placeholder="Start"
+        >
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-calendar"></i>
+        </span>
+      </p>
+
+      <p class="control is-expanded has-icons-left">
+        <input 
+          class="input" 
+          id="job-end-1"   
+          name="jobEnd1"
+          type="text" 
+          placeholder="End"
+        >
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-calendar"></i>
+        </span>
+      </p>
+    </div>
+
+    <textarea class="textarea" placeholder="Please provide a brief (100-200 words max.) of the responsibilties, achievements, or statistics of your most recent job position."></textarea>
+  </div>
+
+  <div class="mb-5">
+    <h5 class="subtitle is-5"><strong>Second Most Recent Job Position</strong></h5>
+  
+    <div class="field">
+      <p class="control is-expanded has-icons-left">
+        <input 
+          class="input" 
+          id="job-title-2"
+          name="jobTitle2"
+          type="text" 
+          placeholder="Job Title"
+        >
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-briefcase"></i>
+        </span>
+      </p>
+    </div>
+
+    <div class="field is-grouped">
+      <p class="control is-expanded has-icons-left">
+        <input 
+          class="input" 
+          id="job-start-2"   
+          name="jobStart2"
+          type="text" 
+          placeholder="Start"
+        >
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-calendar"></i>
+        </span>
+      </p>
+
+      <p class="control is-expanded has-icons-left">
+        <input 
+          class="input" 
+          id="job-end-2"   
+          name="jobEnd2"
+          type="text" 
+          placeholder="End"
+        >
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-calendar"></i>
+        </span>
+      </p>
+    </div>
+
+    <textarea class="textarea" placeholder="Please provide a brief (100-200 words max.) of the responsibilties, achievements, or statistics of your second most recent job position."></textarea>
+  </div>
+  
+  <div class="mb-6">
+    <h5 class="subtitle is-5"><strong>Third Most Recent Job Position</strong></h5>
+  
+    <div class="field">
+      <p class="control is-expanded has-icons-left">
+        <input 
+          class="input" 
+          id="job-title-3"
+          name="jobTitle3"
+          type="text" 
+          placeholder="Job Title"
+        >
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-briefcase"></i>
+        </span>
+      </p>
+    </div>
+
+    <div class="field is-grouped">
+      <p class="control is-expanded has-icons-left">
+        <input 
+          class="input" 
+          id="job-start-3"   
+          name="jobStart3"
+          type="text" 
+          placeholder="Start"
+        >
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-calendar"></i>
+        </span>
+      </p>
+
+      <p class="control is-expanded has-icons-left">
+        <input 
+          class="input" 
+          id="job-end-3"   
+          name="jobEnd3"
+          type="text" 
+          placeholder="End"
+        >
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-calendar"></i>
+        </span>
+      </p>
+    </div>
+
+    <textarea class="textarea" placeholder="Please provide a brief (100-200 words max.) of the responsibilties, achievements, or statistics of your third most recent job position."></textarea>
+  </div>
+
+  <h5 class="subtitle is-4"><strong>Interests (optional)</strong></h5>
+  <hr>
+
+  <div class="field is-grouped">
+    <p class="control is-expanded has-icons-left">
+      <input 
+        class="input" 
+        id="interest-1"
+        name="interest1"
+        type="text" 
+        placeholder="Your first interest or hobby"
+      >
+      <span class="icon is-small is-left">
+        <i class="fa-solid fa-1"></i>
+      </span>
+    </p>
+
+    <p class="control is-expanded has-icons-left">
+      <input 
+        class="input" 
+        id="interest-2"
+        name="interest2"
+        type="text" 
+        placeholder="Your second interest or hobby"
+      >
+      <span class="icon is-small is-left">
+        <i class="fa-solid fa-2"></i>
+      </span>
+    </p>
+  </div>
+
+  <div class="field is-grouped">
+    <p class="control is-expanded has-icons-left">
+      <input 
+        class="input" 
+        id="interest-3"
+        name="interest3"
+        type="text" 
+        placeholder="Your first interest or hobby"
+      >
+      <span class="icon is-small is-left">
+        <i class="fa-solid fa-1"></i>
+      </span>
+    </p>
+
+    <p class="control is-expanded has-icons-left">
+      <input 
+        class="input" 
+        id="interest-4"
+        name="interest4"
+        type="text" 
+        placeholder="Your second interest or hobby"
+      >
+      <span class="icon is-small is-left">
+        <i class="fa-solid fa-2"></i>
+      </span>
+    </p>
+  </div>
+
+  <div class="field is-grouped">
+    <p class="control is-expanded has-icons-left">
+      <input 
+        class="input" 
+        id="interest-5"
+        name="interest5"
+        type="text" 
+        placeholder="Your first interest or hobby"
+      >
+      <span class="icon is-small is-left">
+        <i class="fa-solid fa-1"></i>
+      </span>
+    </p>
+
+    <p class="control is-expanded has-icons-left">
+      <input 
+        class="input" 
+        id="interest-6"
+        name="interest6"
+        type="text" 
+        placeholder="Your second interest or hobby"
+      >
+      <span class="icon is-small is-left">
+        <i class="fa-solid fa-2"></i>
+      </span>
+    </p>
+  </div>
+
+  <div class="buttons is-right mt-5 mb-6">
+    <button class="button is-success" type="submit">
+      <span class="icon">
+        <i class="fa-solid fa-check"></i>
+      </span>
+      <span>Submit</span>
+    </button>
+  </div>
+  </form>
+<div/>
 {% endblock mainContent %}
