@@ -20,9 +20,11 @@
   "homepage": "https://github.com/rtasalem/draft-my-cv#readme",
   "dependencies": {
     "docx": "9.1.1",
+    "docxtemplater": "^3.60.2",
     "express": "4.21.2",
     "nunjucks": "3.2.4",
-    "pdfkit": "0.16.0"
+    "pdfkit": "0.16.0",
+    "pizzip": "^3.1.8"
   },
   "devDependencies": {
     "nodemon": "3.0.1",

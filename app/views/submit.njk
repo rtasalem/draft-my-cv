@@ -11,8 +11,8 @@
     <p class="control is-expanded has-icons-left">
       <input 
         class="input" 
-        id="first-given-names" 
-        name="fistGivenNames" 
+        id="first-name" 
+        name="firstName" 
         type="text" 
         placeholder="First/Given Names" 
         required
@@ -112,8 +112,8 @@
       <p class="control is-expanded has-icons-left">
         <input 
           class="input" 
-          id="undergraduate-university"
-          name="undergraduateUniveristy"
+          id="ug-university"
+          name="ugUniveristy"
           type="text" 
           placeholder="University"
         >
@@ -125,8 +125,8 @@
       <p class="control has-icons-left">
         <input 
           class="input" 
-          id="undergraduate-city-or-state"
-          name="undergraduateCityOrState"
+          id="ug-city-or-state"
+          name="ugCityOrState"
           type="text" 
           placeholder="City or State"
         >
@@ -140,8 +140,8 @@
       <p class="control is-expanded has-icons-left">
         <input 
           class="input"
-          id="undergraduate-degree"
-          name="undergraduateDegree"
+          id="ug-degree"
+          name="ugDegree"
           type="text" 
           placeholder="Degree"
         >
@@ -153,8 +153,8 @@
       <p class="control has-icons-left">
         <input 
           class="input"
-          id="undergraduate-graduation-year" 
-          name="undergraduateGraduationYear"
+          id="ug-graduation-year" 
+          name="ugGraduationYear"
           type="number" 
           min="1900"
           max="2025"
@@ -172,8 +172,8 @@
       <p class="control is-expanded has-icons-left">
         <input 
           class="input" 
-          id="undergraduate-dissertation-title"
-          name="undergraduateDissertationTitle"
+          id="ug-dissertation-title"
+          name="ugDissertationTitle"
           type="text" 
           placeholder="Dissertation Title"
         >
@@ -185,8 +185,8 @@
       <p class="control has-icons-left">
         <input 
           class="input"  
-          id="udergraduate-grade"
-          name="undergraduateGrade"
+          id="ug-grade"
+          name="ugGrade"
           type="text" 
           placeholder="Grade"
         >
@@ -195,7 +195,7 @@
         </span>
       </p>
     </div>
-  <div/>
+  </div>
   
   <div class="mb-5">
     <h5 class="subtitle is-5"><strong>Postgraduate</strong></h5>
@@ -370,8 +370,8 @@
       <p class="control has-icons-left">
         <input 
           class="input" 
-          id="high-school-year"
-          name="highSchoolYear"
+          id="high-schoolgraduation-year"
+          name="highSchoolGraduationYear"
           type="number" 
           min="1900"
           max="2025"
@@ -391,7 +391,7 @@
   <div class="mb-5">
     <h5 class="subtitle is-5"><strong>Most Recent Job Position</strong></h5>
   
-    <div class="field">
+    <div class="field is-grouped">
       <p class="control is-expanded has-icons-left">
         <input 
           class="input" 
@@ -399,6 +399,19 @@
           name="jobTitle1"
           type="text" 
           placeholder="Job Title"
+        >
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-briefcase"></i>
+        </span>
+      </p>
+
+      <p class="control is-expanded has-icons-left">
+        <input 
+          class="input" 
+          id="job-company-1"
+          name="jobCompany1"
+          type="text" 
+          placeholder="Company"
         >
         <span class="icon is-small is-left">
           <i class="fa-solid fa-briefcase"></i>
@@ -434,13 +447,13 @@
       </p>
     </div>
 
-    <textarea class="textarea" placeholder="Please provide a brief (100-200 words max.) of the responsibilties, achievements, or statistics of your most recent job position."></textarea>
+    <textarea class="textarea" id="job-summary-1" name="jobSummary1" placeholder="Please provide a brief (100-200 words max.) of the responsibilties, achievements, or statistics of your most recent job position."></textarea>
   </div>
 
   <div class="mb-5">
     <h5 class="subtitle is-5"><strong>Second Most Recent Job Position</strong></h5>
   
-    <div class="field">
+    <div class="field is-grouped">
       <p class="control is-expanded has-icons-left">
         <input 
           class="input" 
@@ -448,6 +461,19 @@
           name="jobTitle2"
           type="text" 
           placeholder="Job Title"
+        >
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-briefcase"></i>
+        </span>
+      </p>
+
+      <p class="control is-expanded has-icons-left">
+        <input 
+          class="input" 
+          id="job-company-2"
+          name="jobCompany2"
+          type="text" 
+          placeholder="Company"
         >
         <span class="icon is-small is-left">
           <i class="fa-solid fa-briefcase"></i>
@@ -483,13 +509,13 @@
       </p>
     </div>
 
-    <textarea class="textarea" placeholder="Please provide a brief (100-200 words max.) of the responsibilties, achievements, or statistics of your second most recent job position."></textarea>
+    <textarea class="textarea" id="job-summary-2" name="jobSummary2" placeholder="Please provide a brief (100-200 words max.) of the responsibilties, achievements, or statistics of your second most recent job position."></textarea>
   </div>
   
   <div class="mb-6">
     <h5 class="subtitle is-5"><strong>Third Most Recent Job Position</strong></h5>
   
-    <div class="field">
+    <div class="field is-grouped">
       <p class="control is-expanded has-icons-left">
         <input 
           class="input" 
@@ -497,6 +523,19 @@
           name="jobTitle3"
           type="text" 
           placeholder="Job Title"
+        >
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-briefcase"></i>
+        </span>
+      </p>
+
+      <p class="control is-expanded has-icons-left">
+        <input 
+          class="input" 
+          id="job-company-3"
+          name="jobCompany3"
+          type="text" 
+          placeholder="Company"
         >
         <span class="icon is-small is-left">
           <i class="fa-solid fa-briefcase"></i>
@@ -532,7 +571,7 @@
       </p>
     </div>
 
-    <textarea class="textarea" placeholder="Please provide a brief (100-200 words max.) of the responsibilties, achievements, or statistics of your third most recent job position."></textarea>
+    <textarea class="textarea" id="job-summary-3" name="jobSummary3" placeholder="Please provide a brief (100-200 words max.) of the responsibilties, achievements, or statistics of your third most recent job position."></textarea>
   </div>
 
   <h5 class="subtitle is-4"><strong>Interests (optional)</strong></h5>
