@@ -15,7 +15,6 @@
         name="firstName" 
         type="text" 
         placeholder="First/Given Names" 
-        required
       >
       <span class="icon is-small is-left">
         <i class="fas fa-user"></i>
@@ -29,7 +28,6 @@
         name="lastName"
         type="text" 
         placeholder="Last Name"
-        required
       >
       <span class="icon is-small is-left">
         <i class="fas fa-users"></i>
@@ -41,11 +39,10 @@
     <p class="control is-expanded has-icons-left">
       <input 
         class="input" 
-        id="city-or-state"
-        name="cityOrState"
+        id="location"
+        name="location"
         type="text" 
-        placeholder="City or State"
-        required
+        placeholder="Location (City or State)"
       >
       <span class="icon is-small is-left">
         <i class="fa-solid fa-city"></i>
@@ -56,20 +53,18 @@
       <span class="select">
         <select 
           id="country" 
-          name="country" 
-          required
+          name="country"
         >
-          <option selected>Country</option>
-          <option>Select dropdown</option>
         </select>
       </span>
       <span class="icon is-small is-left">
         <i class="fa-solid fa-earth-europe"></i>
       </span>
     </p>
+    <script src="/public/js/countries.js"></script>
   </div>
 
-  <div class="field is-grouped">
+  <div class="field is-grouped mb-5">
     <p class="control is-expanded has-icons-left">
       <input 
         class="input" 
@@ -77,31 +72,29 @@
         name="emailAddress"
         type="email" 
         placeholder="Email Address"
-        required
       >
       <span class="icon is-small is-left">
         <i class="fa-solid fa-envelope"></i>
       </span>
     </p>
 
-    <div class="mb-5">
-      <p class="control has-icons-left">
+    <div>
+      <p class="control is-expanded has-icons-left">
         <input 
           class="input" 
           id="phone-number"
           name="phoneNumber"
           type="tel" 
           placeholder="Phone Number"
-          required
         >
         <span class="icon is-small is-left">
           <i class="fa-solid fa-phone"></i>
         </span>
       </p>
-      <p class="help">Please specify the area code e.g. +44</p>
+      <p class="help">Please include the area code e.g. +44, +1.</p>
     </div>
   </div>
-  
+
   <h5 class="subtitle is-4"><strong>Education (optional)</strong></h5>
   <hr>
 

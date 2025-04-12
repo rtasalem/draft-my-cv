@@ -1,21 +1,4 @@
-footer.footer {
-  padding: 2rem 1.5rem 2rem;
-}
-
-footer .content {
-  font-size: 0.875rem;
-  line-height: 1.2;
-}
-
-.bd-hr {
-  margin-left: 0;
-  background-color: var(--theme-color, var(--bulma-primary));
-  border-radius: 9999px;
-  height: .25rem;
-  width: 4em;
-}
-
-/* body {
+body {
   font-family: Calibri, 'Segoe UI', Arial, sans-serif;
   line-height: 1.5;
   max-width: 8.5in;
@@ -78,4 +61,4 @@ li {
 }
 .coursework {
   margin-top: 0.25em;
-} */
+}
