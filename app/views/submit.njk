@@ -118,10 +118,10 @@
       <p class="control has-icons-left">
         <input 
           class="input" 
-          id="ug-city-or-state"
-          name="ugCityOrState"
+          id="ug-location"
+          name="ugLocation"
           type="text" 
-          placeholder="City or State"
+          placeholder="Location (City or Stateº"
         >
         <span class="icon is-small is-left">
           <i class="fa-solid fa-city"></i>
@@ -144,21 +144,18 @@
       </p>
 
       <p class="control has-icons-left">
-        <input 
-          class="input"
-          id="ug-graduation-year" 
-          name="ugGraduationYear"
-          type="number" 
-          min="1900"
-          max="2025"
-          step="1"
-          {# need to dynamically set the maximum year to always update to the current year #}
-          placeholder="Graduation Year"
+        <span class="select">
+          <select 
+            id="ug-graduation-year" 
+            name="ugGraduationYear"
           >
+          </select>
+        </span>
         <span class="icon is-small is-left">
           <i class="fa-solid fa-calendar"></i>
         </span>
       </p>
+      <script src="/public/js/year.js"></script>
     </div>
 
     <div class="field is-grouped mb-5">
