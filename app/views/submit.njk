@@ -61,7 +61,6 @@
         <i class="fa-solid fa-earth-europe"></i>
       </span>
     </p>
-    <script src="/public/js/countries.js"></script>
   </div>
 
   <div class="field is-grouped mb-5">
@@ -121,7 +120,7 @@
           id="ug-location"
           name="ugLocation"
           type="text" 
-          placeholder="Location (City or Stateº"
+          placeholder="Location (City or State)"
         >
         <span class="icon is-small is-left">
           <i class="fa-solid fa-city"></i>
@@ -146,6 +145,7 @@
       <p class="control has-icons-left">
         <span class="select">
           <select 
+            class="graduation-year"
             id="ug-graduation-year" 
             name="ugGraduationYear"
           >
@@ -155,7 +155,6 @@
           <i class="fa-solid fa-calendar"></i>
         </span>
       </p>
-      <script src="/public/js/year.js"></script>
     </div>
 
     <div class="field is-grouped mb-5">
@@ -233,16 +232,14 @@
       </p>
 
       <p class="control has-icons-left">
-        <input 
-          class="input"
-          id="pg-graduation-year"
-          name="pgGraduationYear" 
-          type="number" 
-          min="1900"
-          max="2025"
-          step="1"
-          placeholder="Graduation Year"
-        >
+        <span class="select">
+          <select 
+            class="graduation-year"
+            id="pg-graduation-year" 
+            name="pgGraduationYear"
+          >
+          </select>
+        </span>
         <span class="icon is-small is-left">
           <i class="fa-solid fa-calendar"></i>
         </span>
@@ -322,21 +319,19 @@
           <i class="fa-solid fa-scroll"></i>
         </span>
 
-        <p class="control has-icons-left">
-          <input 
-            class="input"
-            id="exchange-year"
-            name="exchangeYear" 
-            type="number" 
-            min="1900"
-            max="2025"
-            step="1"
-            placeholder="Year"
+      <p class="control has-icons-left">
+        <span class="select">
+          <select 
+            class="graduation-year"
+            id="exchange-year" 
+            name="exchangeYear"
           >
-          <span class="icon is-small is-left">
-            <i class="fa-solid fa-calendar"></i>
-          </span>
-        </p>
+          </select>
+        </span>
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-calendar"></i>
+        </span>
+      </p>
     </div>
   </div>
 
@@ -358,16 +353,14 @@
       </p>
 
       <p class="control has-icons-left">
-        <input 
-          class="input" 
-          id="high-schoolgraduation-year"
-          name="highSchoolGraduationYear"
-          type="number" 
-          min="1900"
-          max="2025"
-          step="1"
-          placeholder="Year"
-        >
+        <span class="select">
+          <select 
+            class="graduation-year"
+            id="hs-graduation-year" 
+            name="hsGraduationYear"
+          >
+          </select>
+        </span>
         <span class="icon is-small is-left">
           <i class="fa-solid fa-calendar"></i>
         </span>
@@ -605,7 +598,7 @@
         placeholder="Your first interest or hobby"
       >
       <span class="icon is-small is-left">
-        <i class="fa-solid fa-1"></i>
+        <i class="fa-solid fa-3"></i>
       </span>
     </p>
 
@@ -618,7 +611,7 @@
         placeholder="Your second interest or hobby"
       >
       <span class="icon is-small is-left">
-        <i class="fa-solid fa-2"></i>
+        <i class="fa-solid fa-4"></i>
       </span>
     </p>
   </div>
@@ -633,7 +626,7 @@
         placeholder="Your first interest or hobby"
       >
       <span class="icon is-small is-left">
-        <i class="fa-solid fa-1"></i>
+        <i class="fa-solid fa-5"></i>
       </span>
     </p>
 
@@ -646,7 +639,7 @@
         placeholder="Your second interest or hobby"
       >
       <span class="icon is-small is-left">
-        <i class="fa-solid fa-2"></i>
+        <i class="fa-solid fa-6"></i>
       </span>
     </p>
   </div>
