@@ -1,4 +1,4 @@
-const prepareFormData = (formData) => {
+export const prepareTemplateData = (formData) => {
   const personalInformation = {
     fullName: `${formData.firstName || ''} ${formData.lastName || ''}`.trim(),
     location: formData.location || '',
@@ -107,5 +107,3 @@ const prepareFormData = (formData) => {
     skills
   }
 }
-
-export { prepareFormData }
