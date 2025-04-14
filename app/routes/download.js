@@ -10,7 +10,7 @@ router.get('/download', (req, res) => {
 
 router.post('/download', (req, res) => {
   formData = req.body
-  console.log('Form data received:', formData)
+  console.log('Form data received:', formData) // REMOVE THIS BEFORE GOING LIVE
 
   res.redirect('/download')
 })
