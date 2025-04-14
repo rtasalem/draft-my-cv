@@ -9,33 +9,33 @@ export const prepareTemplateData = (formData) => {
 
   const education = []
 
-  if (formData.ugUniveristy) {
+  if (formData.undergraduate) {
     education.push({
-      institution: formData.ugUniveristy,
-      location: formData.ugCityOrState || '',
-      degree: formData.ugDegree || '',
-      gpa: formData.ugGrade || '',
-      graduationDate: formData.ugGraduationYear || '',
-      thesis: formData.ugDissertationTitle || ''
+      university: formData.univeristy,
+      location: formData.location || '',
+      degree: formData.degree || '',
+      graduationDate: formData.graduationDate || '',
+      dissertationTitle: formData.dissertationTitle || '',
+      grade: formData.grade || ''
     })
   }
 
-  if (formData.pgUniversity) {
+  if (formData.postgraduate) {
     education.push({
-      institution: formData.pgUniversity,
-      location: formData.pgCityOrState || '',
-      degree: formData.pgDegree || '',
-      gpa: formData.pgGrade || '',
-      graduationDate: formData.pgGraduationYear || '',
-      thesis: formData.pgDissertationTitle || ''
+      university: formData.univeristy,
+      location: formData.location || '',
+      degree: formData.degree || '',
+      graduationDate: formData.graduationDate || '',
+      dissertationTitle: formData.dissertationTitle || '',
+      grade: formData.grade || ''
     })
   }
 
   let studyAbroad = null
-  if (formData.exchangeUniversity) {
+  if (formData.studyAbroad) {
     studyAbroad = {
-      location: `${formData.exchangeUniversity}, ${formData.exchangeCityOrState || ''}`,
-      program: formData.exchangeDegreeProgramme || '',
+      location: `${formData.university}, ${formData.exchangeLocation || ''}`,
+      program: formData.exchangeProgramme || '',
       dates: formData.exchangeYear || ''
     }
   }
@@ -44,41 +44,36 @@ export const prepareTemplateData = (formData) => {
   if (formData.highSchool) {
     highSchool = {
       name: formData.highSchool,
-      location: '', // Not directly in your form
-      details: '', // Not in your form
-      graduationDate: formData.highSchoolGraduationYear || ''
+      graduationDate: formData.graduationDate || ''
     }
   }
 
   const experience = []
 
-  if (formData.jobTitle1) {
+  if (formData.mostRecentJobTitle) {
     experience.push({
-      organization: formData.jobCompany1 || '',
-      location: '', // Not directly in your form
-      position: formData.jobTitle1,
-      dates: `${formData.jobStart1 || ''} - ${formData.jobEnd1 || ''}`,
-      bullets: formData.jobSummary1 ? formData.jobSummary1.split('\n') : []
+      jobTitle: formData.mostRecentJobTitle || '',
+      company: formData.company || '',
+      dates: `${formData.jobStartDate || ''} - ${formData.jobEndDate || ''}`,
+      bullets: formData.jobSummary ? formData.jobSummary.split('\n') : []
     })
   }
 
-  if (formData.jobTitle2) {
+  if (formData.secondMostRecentJobTitle) {
     experience.push({
-      organization: formData.jobCompany2 || '',
-      location: '', // Not directly in your form
-      position: formData.jobTitle2,
-      dates: `${formData.jobStart2 || ''} - ${formData.jobEnd2 || ''}`,
-      bullets: formData.jobSummary2 ? formData.jobSummary2.split('\n') : []
+      jobTitle: formData.secondMostRecentJobTitle || '',
+      company: formData.company || '',
+      dates: `${formData.jobStartDate || ''} - ${formData.jobEndDate || ''}`,
+      bullets: formData.jobSummary ? formData.jobSummary.split('\n') : []
     })
   }
 
-  if (formData.jobTitle3) {
+  if (formData.thirdMostRecentJobTitle) {
     experience.push({
-      organization: formData.jobCompany3 || '',
-      location: '', // Not directly in your form
-      position: formData.jobTitle3,
-      dates: `${formData.jobStart3 || ''} - ${formData.jobEnd3 || ''}`,
-      bullets: formData.jobSummary3 ? formData.jobSummary3.split('\n') : []
+      jobTitle: formData.thirdMostRecentJobTitle || '',
+      company: formData.company || '',
+      dates: `${formData.jobStartDate || ''} - ${formData.jobEndDate || ''}`,
+      bullets: formData.jobSummary ? formData.jobSummary.split('\n') : []
     })
   }
 

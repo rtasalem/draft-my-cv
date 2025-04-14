@@ -5,8 +5,8 @@ import { staticDirs } from './constants/index.js'
 import { inputParser } from './middlewares/index.js'
 import {
   health,
-  about,
   submit,
+  about,
   issues,
   disclaimer
 } from './routes/index.js'
@@ -31,8 +31,8 @@ const server = async () => {
   })
 
   app.use(health)
-  app.use(about)
   app.use(submit)
+  app.use(about)
   app.use(issues)
   app.use(disclaimer)
 
