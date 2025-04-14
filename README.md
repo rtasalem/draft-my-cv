@@ -7,6 +7,8 @@ Once your CV has been generated you can download it as a Word document or a PDF,
 
 This application is intended to cut down the time taken to create a structured, clear, and well-crafted CV for anyone who is currently job hunting. Good luck!
 
+All information you enter is used solely to generate your CV and is not stored, saved, or transmitted to any database or third-party service. Once your CV is generated, your data is immediately discarded and not retained by our system in any form.
+
 ## Features
 TBC
 
@@ -37,6 +39,6 @@ See the [LICENSE](/LICENSE.md) file for license rights and limitations ([MIT](ht
 ## Acknowledgments
 A [Nunjucks Bulma Starter Kit](https://github.com/benninkcorien/nunjucks-starter-kit) developed by [benninkcorien](https://github.com/benninkcorien) was helpful in understanding how to integrate Bulma with Nunjucks.
 
-A [YouTube tutorial](https://www.youtube.com/watch?v=iw4lvZGBuvA) by [Osten Code Cypher](https://www.youtube.com/@OstonCodeCypher) that showed how to implement a HTML drop down list of all countries by using the .
+A [YouTube tutorial](https://www.youtube.com/watch?v=iw4lvZGBuvA) by [Osten Code Cypher](https://www.youtube.com/@OstonCodeCypher) that showed how to implement a HTML drop down list of all countries by using the [REST Countries API](https://restcountries.com/).
 
-Lastly, Nicola, the inspiration behind this project.
+And lastly, Nicola, the inspiration behind this project.

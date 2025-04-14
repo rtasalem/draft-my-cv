@@ -1,9 +1,10 @@
-const transformFormData = (formData) => {
-  const contactInfo = {
-    name: `${formData.firstName || ''} ${formData.lastName || ''}`.trim(),
-    location: formData.cityOrState || '',
-    email: formData.emailAddress || '',
-    phone: formData.phoneNumber || ''
+const prepareFormData = (formData) => {
+  const personalInformation = {
+    fullName: `${formData.firstName || ''} ${formData.lastName || ''}`.trim(),
+    location: formData.location || '',
+    country: formData.country || '',
+    emailAddress: formData.emailAddress || '',
+    phoneNumber: `${formData.callingCode || ''} ${formData.phoneNumber || ''}`.trim()
   }
 
   const education = []
@@ -97,17 +98,14 @@ const transformFormData = (formData) => {
     }
   }
 
-  const activities = []
-
   return {
-    contactInfo,
+    personalInformation,
     education,
     studyAbroad,
     highSchool,
     experience,
-    activities,
     skills
   }
 }
 
-export { transformFormData }
+export { prepareFormData }
