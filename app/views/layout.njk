@@ -14,19 +14,30 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/monthSelect/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/monthSelect/index.js"></script>
+
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
   </head>
 
   <body class="is-flex is-flex-direction-column" style="min-height: 100vh;">
-    {% include 'components/hero-navbar.njk' %}
+    {% include 'partials/navbar.njk' %}
 
     <main class="is-flex-grow-1">
       {% block mainContent %}{% endblock %}
     </main>
+
+    <script src="/public/js/calling-code.js"></script>
+    <script src="/public/js/countries.js"></script>
+    <script src="/public/js/year.js"></script>
+    <script src="/public/js/month-year.js"></script>
   </body>
 
   <footer>
-    {% include 'components/footer.njk' %}
+    {% include 'partials/footer.njk' %}
   </footer>
 </html>

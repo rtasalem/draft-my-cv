@@ -1,4 +1,4 @@
 export const staticDirs = [
-  { route: '/utils', dir: 'utils' },
-  { route: '/assets', dir: 'assets' }
+  { route: '/assets', dir: 'assets' },
+  { route: '/public', dir: 'public' }
 ]

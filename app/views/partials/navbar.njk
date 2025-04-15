@@ -1,9 +1,9 @@
-{% set navItemsStart = [
+{% set navItems = [
     { title: 'Home', url: '/', pageName: 'submit' },
     { title: 'About', url: '/about', pageName: 'about' },
+    { title: 'Disclaimer', url: '/disclaimer', pageName: 'disclaimer'},
     { title: 'Issues', url: '/issues', pageName: 'issues' },
-    { title: 'Disclaimer', url: '/disclaimer', pageName: 'disclaimer' }
-
+    { title: 'GitHub', url: 'https://github.com/rtasalem/draft-my-cv'}
 ] %}
 
 <section class="hero is-small">
@@ -12,8 +12,8 @@
       <div class="container">
         <div id="navbarHero" class="navbar-menu">
           <div class="navbar-start">
-            <img class="navbar-item" src="../../assets/favicon.ico"></img>
-          {% for navItem in navItemsStart %}
+            <a href="/"><img class="navbar-item" src="../../assets/favicon.ico"></img></a>
+            {% for navItem in navItems %}
               {% if pageName == navItem.pageName %}
               <a href="{{ navItem.url }}" class="navbar-item active">
                 {% else %}
@@ -26,7 +26,7 @@
 
           <div class="navbar-end">
             <div class="navbar-brand">
-              <a href="http://ranasalem.io/" target="_blank" class="navbar-item">Developed by Rana Salem</a>
+                <a href="http://ranasalem.io" target="_blank" class="navbar-item">Developed by Rana Salem</a>
             </div>
           </div>
         </div>
