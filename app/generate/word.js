@@ -30,7 +30,7 @@ export const generateWordDoc = async (res, formData) => {
       ]
     })
 
-    const buffer = await docx.Packger.toBuffer(doc)
+    const buffer = await docx.Packer.toBuffer(doc)
 
     res.setHeader(
       'Content-Disposition',
