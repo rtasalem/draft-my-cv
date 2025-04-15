@@ -2,7 +2,7 @@ import express from 'express'
 import {
   generatePdf,
   generateWordDoc
-} from '../generate/index.js'
+} from '../cv/generate/index.js'
 
 const router = express.Router()
 
