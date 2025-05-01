@@ -41,4 +41,4 @@ A [Nunjucks Bulma Starter Kit](https://github.com/benninkcorien/nunjucks-starter
 
 A [YouTube tutorial](https://www.youtube.com/watch?v=iw4lvZGBuvA) by [Osten Code Cypher](https://www.youtube.com/@OstonCodeCypher) that showed how to implement a HTML drop down list of all countries by using the [REST Countries API](https://restcountries.com/).
 
-And lastly, Nicola, the inspiration behind this project.
+And lastly, Nicola, who gave me the idea in the first place.
