@@ -14,7 +14,10 @@ export const generateWordDoc = async (formData, res) => {
 
   try {
     const doc = new Document({
-      
+      sections: [],
+      styles: {
+        
+      }
     })
   } catch (error) {
 

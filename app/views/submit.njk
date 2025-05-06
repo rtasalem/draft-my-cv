@@ -1,18 +1,20 @@
 {% extends 'layout.njk' %}
 
+{% set sections = [
+  'partials/submit/personal-information.njk',
+  'partials/submit/education.njk',
+  'partials/submit/work-experience.njk',
+  'partials/submit/projects.njk',
+  'partials/submit/interests.njk'
+] %}
+
 {% block mainContent %}
   <div class="container is-max-tablet">
     <form action="/download" method="POST" style="display: inline;">
 
-      {% include 'partials/submit/personal-information.njk' %}
-
-      {% include 'partials/submit/education.njk' %}
-
-      {% include 'partials/submit/work-experience.njk' %}
-
-      {% include 'partials/submit/projects.njk' %}
-
-      {% include 'partials/submit/interests.njk' %}
+      {% for section in sections %}
+        {% include section %}
+      {% endfor %}
 
       <div class="buttons is-right mt-5 mb-6">
         <button class="button is-success" type="submit">
