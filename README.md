@@ -1,16 +1,13 @@
 # Draft My CV
-Status: WIP<br>
-
 A CV (resume) generator that takes in information such as contact details, education, work experience, projects and builds a ready to download CV using the [University of Harvard's Mignone Center for Career Success Bullet Point Resume Template](https://careerservices.fas.harvard.edu/resources/bullet-point-resume-template/), often regarded as one of the best CV/resume templates.
-
-Once your CV has been generated you can download it as a Word document or a PDF, ready to submit alongside any job or internship applications.
 
 This application is intended to cut down the time taken to create a structured, clear, and well-crafted CV for anyone who is currently job hunting. Good luck!
 
-All information you enter is used solely to generate your CV and is not stored, saved, or transmitted to any database or third-party service. Once your CV is generated, your data is immediately discarded and not retained by our system in any form.
+All information you enter is used solely to generate your CV and is not stored, saved, or transmitted to any database or third-party service. Once your CV is generated, your data is immediately discarded and not retained by the system in any form.
 
 ## Features
-TBC
+Download generated CV as a Word document or PDF.
+System-based automatic theme detection for light or dark mode.
 
 ## Prequisites
 Node.js v23+ <br>
@@ -19,13 +16,13 @@ Docker Compose.
 
 ## Getting Started
 Clone repository and run `npm install` to install all dependencies.<br>
-Any of the following commands can be used to run the project via Node.js:
+Any of the following commands can be used to run the project via Node.js.
 ```
-npm run start
+npm run start // without nodemon 
 ```
 or
 ```
-npm run dev
+npm run dev // with nodemon
 ```
 Or use the following commands in the order shown to build and start the Docker container:
 ```

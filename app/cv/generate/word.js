@@ -1,9 +1,9 @@
 import {
-  Document, 
-  Paragraph, 
+  Document,
+  Paragraph,
   TextRun,
-  BorderStyle, 
-  AlignmentType, 
+  BorderStyle,
+  AlignmentType,
   Packer
 } from 'docx'
 
@@ -15,9 +15,7 @@ export const generateWordDoc = async (formData, res) => {
   try {
     const doc = new Document({
       sections: [],
-      styles: {
-        
-      }
+
     })
   } catch (error) {
 
