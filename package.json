@@ -1,6 +1,6 @@
 {
   "name": "draft-my-cv",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "A CV (resume) generator.",
   "main": "index.js",
   "type": "module",
@@ -22,9 +22,9 @@
     "docx": "9.1.1",
     "docxtemplater": "^3.60.2",
     "express": "4.21.2",
+    "html-to-docx": "^1.8.0",
     "nunjucks": "3.2.4",
-    "pdfkit": "0.16.0",
-    "pizzip": "^3.1.8"
+    "pdfkit": "^0.17.0"
   },
   "devDependencies": {
     "nodemon": "3.0.1",
