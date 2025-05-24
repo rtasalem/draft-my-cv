@@ -1,14 +1,12 @@
 import express from 'express'
 import nunjucks from 'nunjucks'
 import path from 'path'
-import { staticDirs } from './constants/index.js'
+import { staticDirs } from './constants/static-dirs.js'
 import { inputParser } from './middlewares/index.js'
 import {
-  health,
-  submit,
-  about,
-  issues,
-  disclaimer
+  aboutRoute,
+  disclaimerRoute,
+  issuesRoute
 } from './routes/index.js'
 
 const server = async () => {
@@ -30,11 +28,9 @@ const server = async () => {
     app.use(route, express.static(path.join(__dirname, dir)))
   })
 
-  app.use(health)
-  app.use(submit)
-  app.use(about)
-  app.use(issues)
-  app.use(disclaimer)
+  app.use(aboutRoute)
+  app.use(disclaimerRoute)
+  app.use(issuesRoute)
 
   app.listen(port, () => {
     console.log(`Application listening on http://localhost:${port}`)

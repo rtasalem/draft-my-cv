@@ -1,8 +1,6 @@
 import express from 'express'
+import { disclaimerController } from '../controllers/disclaimer.js'
+
 const router = express.Router()
 
-router.get('/disclaimer', (req, res) => {
-  res.render('disclaimer')
-})
-
-export default router
+export default router.get('/disclaimer', disclaimerController)
