@@ -1,15 +1,11 @@
-import health from './health.js'
-import about from './about.js'
-import submit from './submit.js'
-// import download from './download.js'
-import issues from './issues.js'
-import disclaimer from './disclaimer.js'
+import healthRoute from './health.js'
+import aboutRoute from './about.js'
+import disclaimerRoute from './disclaimer.js'
+import issuesRoute from './issues.js'
 
 export {
-  health,
-  about,
-  submit,
-  // download,
-  issues,
-  disclaimer
+  healthRoute,
+  aboutRoute,
+  disclaimerRoute,
+  issuesRoute
 }
