@@ -4,6 +4,7 @@ import path from 'path'
 import { staticDirs } from './constants/static-dirs.js'
 import { inputParser } from './middlewares/index.js'
 import {
+  healthRoute,
   aboutRoute,
   disclaimerRoute,
   issuesRoute
@@ -28,6 +29,7 @@ const server = async () => {
     app.use(route, express.static(path.join(__dirname, dir)))
   })
 
+  app.use(healthRoute)
   app.use(aboutRoute)
   app.use(disclaimerRoute)
   app.use(issuesRoute)
