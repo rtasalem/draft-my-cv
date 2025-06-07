@@ -1,6 +1,6 @@
 {
   "name": "draft-my-cv",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A CV (resume) generator.",
   "main": "index.js",
   "type": "module",
