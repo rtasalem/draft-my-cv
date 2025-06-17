@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const selectDrop = document.getElementById('calling-code')
 
-  fetch('https://restcountries.com/v3.1/all').then(res => {
+  fetch('https://restcountries.com/v3.1/all?fields=name,cca2,idd').then(res => {
     return res.json()
   }).then(countries => {
     let options = '<option value="" disabled selected>Calling code</option>'
