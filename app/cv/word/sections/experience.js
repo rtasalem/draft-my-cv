@@ -15,11 +15,11 @@ export const createExperience = (formData) => {
   })
 
   for (let i = 1; i <= 3; i++) {
-    const jobTitle = formData(`jobTitle${i}`)
-    const jobCompany = formData(`jobCompany${i}`)
-    const jobStart = formData(`jobStart${i}`)
-    const jobEnd = formData(`jobEnd${i}`)
-    const jobSummary = formData(`jobSummary${i}`)
+    const jobTitle = formData[`jobTitle${i}`]
+    const jobCompany = formData[`jobCompany${i}`]
+    const jobStart = formData[`jobStart${i}`]
+    const jobEnd = formData[`jobEnd${i}`]
+    const jobSummary = formData[`jobSummary${i}`]
 
     if (jobTitle && jobCompany) {
       sections.push(

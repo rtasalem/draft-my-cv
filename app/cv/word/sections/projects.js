@@ -26,9 +26,9 @@ export const createProjects = (formData) => {
     )
 
     for (let i = 1; i <= 3; i++) {
-      const title = formData(`projectTitle${i}`)
-      const url = formData(`projectUrl${i}`)
-      const summary = formData(`projectSummary${i}`)
+      const title = formData[`projectTitle${i}`]
+      const url = formData[`projectUrl${i}`]
+      const summary = formData[`projectSummary${i}`]
 
       if (title) {
         const titleParts = []
