@@ -54,4 +54,6 @@ export const createExperience = (formData) => {
       )
     }
   }
+
+  return sections
 }

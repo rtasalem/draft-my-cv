@@ -74,4 +74,6 @@ export const createProjects = (formData) => {
       }
     }
   }
+
+  return sections
 }

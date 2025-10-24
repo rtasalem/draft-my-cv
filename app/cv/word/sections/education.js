@@ -152,4 +152,6 @@ export const createEducation = (formData) => {
       })
     )
   }
+
+  return sections
 }

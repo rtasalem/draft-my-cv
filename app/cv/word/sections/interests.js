@@ -28,4 +28,6 @@ export const createInterests = (formData) => {
       sections.push(createBulletPoint(item))
     })
   }
+
+  return sections
 }
