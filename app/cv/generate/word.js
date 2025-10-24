@@ -42,7 +42,7 @@ export const generateWordDoc = async (formData, res) => {
     Packer.toBuffer(doc).then(buffer => {
       res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document')
       res.setHeader('Content-Disposition', 'attachment; filename=resume.docx')
-      res.send(buffer)
+      res.end(buffer)
     }).catch(error => {
       console.error('Word document packing error:', error)
       res.status(500).send('Failed to pack Word document')

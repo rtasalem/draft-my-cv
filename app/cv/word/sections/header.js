@@ -15,9 +15,9 @@ export const createHeader = (formData) => {
       ]
     }),
     new Paragraph({
-      border: {
+      borders: {
         bottom: {
-          colour: 'auto',
+          color: 'auto',
           space: 1,
           style: BorderStyle.SINGLE,
           size: 6

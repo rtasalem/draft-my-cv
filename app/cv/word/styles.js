@@ -6,7 +6,7 @@ export const styles = {
       id: 'sectionTitle',
       name: 'Section Title',
       basedOn: 'Normal',
-      nest: 'Normal',
+      next: 'Normal',
       run: {
         size: 28,
         bold: true,
@@ -21,7 +21,7 @@ export const styles = {
       }
     },
     {
-      id: 'Header',
+      id: 'header',
       name: 'Header Name',
       basedOn: 'Normal',
       next: 'Normal',

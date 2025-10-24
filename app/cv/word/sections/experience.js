@@ -7,12 +7,14 @@ import { createBulletPoint } from '../utils.js'
 export const createExperience = (formData) => {
   const sections = []
 
-  sections.push({
-    style: 'sectionTitle',
-    children: [
-      new TextRun('Experience')
-    ]
-  })
+  sections.push(
+    new Paragraph({
+      style: 'sectionTitle',
+      children: [
+        new TextRun('Experience')
+      ]
+    })
+  )
 
   for (let i = 1; i <= 3; i++) {
     const jobTitle = formData[`jobTitle${i}`]
