@@ -3,4 +3,6 @@ import { aboutController } from '../controllers/about.js'
 
 const router = express.Router()
 
-export default router.get('/about', aboutController)
+router.get('/', aboutController)
+
+export default router

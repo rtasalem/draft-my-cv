@@ -1,13 +1,7 @@
-import health from './health.js'
-import about from './about.js'
-import submit from './submit.js'
-import issues from './issues.js'
-import disclaimer from './disclaimer.js'
-
-export {
-  health,
-  about,
-  submit,
-  issues,
-  disclaimer
-}
+export { default as health } from './health.js'
+export { default as about } from './about.js'
+export { default as submit } from './submit.js'
+export { default as download } from './download.js'
+export { default as generate } from './generate/index.js'
+export { default as issues } from './issues.js'
+export { default as disclaimer } from './disclaimer.js'

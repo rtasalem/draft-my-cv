@@ -5,3 +5,6 @@ helm/**/*.lock
 *.tgz
 .vscode
 .env
+.github/prompts
+.github/agents
+.github/skills

@@ -6,6 +6,8 @@ import { inputParser } from './middlewares/index.js'
 import {
   health,
   submit,
+  download,
+  generate,
   about,
   issues,
   disclaimer
@@ -30,11 +32,13 @@ const server = async () => {
     app.use(route, express.static(path.join(__dirname, dir)))
   })
 
-  app.use(health)
-  app.use(submit)
-  app.use(about)
-  app.use(issues)
-  app.use(disclaimer)
+  app.use('/health', health)
+  app.use('/about', about)
+  app.use('/disclaimer', disclaimer)
+  app.use('/issues', issues)
+  app.use('/download', download)
+  app.use('/generate', generate)
+  app.use('/', submit)
 
   app.listen(port, () => {
     console.log(`Application listening on http://localhost:${port}`)

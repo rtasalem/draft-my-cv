@@ -3,4 +3,6 @@ import { disclaimerController } from '../controllers/disclaimer.js'
 
 const router = express.Router()
 
-export default router.get('/disclaimer', disclaimerController)
+router.get('/', disclaimerController)
+
+export default router

@@ -32,7 +32,7 @@ Start the container:
 docker compose up -d
 ```
 
-Access the app UI on [http://localhost:3000](http://localhost:3000)
+Access the app UI on [http://localhost:3000](http://localhost:3000).
 
 ## License
 
