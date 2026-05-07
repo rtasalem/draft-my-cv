@@ -1,8 +1,8 @@
 import express from 'express'
 import nunjucks from 'nunjucks'
 import path from 'path'
-import { staticDirs } from './constants/index.js'
-import { inputParser } from './middlewares/index.js'
+import { staticDirs } from './constants/static-dirs.js'
+import { inputParser } from './middlewares/input-parser.js'
 import {
   health,
   submit,
