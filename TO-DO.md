@@ -10,9 +10,14 @@
 
 ## Accessibility
 - [ ] Should be available as a Docker image that can be pulled from DockerHub
-- [ ] Should be hosted online
+- [ ] Should be hosted online (use Helm/K8s!)
 - [ ] Make elements responsive e.g. buttons -> see Bulma docs
 
 ## Refactoring
 - [ ] Tidy up references to each route in server (can constants + a forEach loop be used?)
 - [ ] Add appropriate spacing to .njk files - mirror how the UI actually looks
+- [ ] Update Dockerfile and Docker Compose files
+- [ ] Add GitHub actions
+- [ ] Remove barrel (`index.js`) files
+- [ ] Figure out why undergraduate education isn't submitted
+- [ ] Put job title + date ranges as first line and then employer on second line for experience section.

@@ -15,12 +15,59 @@ export const createEducation = (formData) => {
     })
   )
 
+  if (formData.pgUniversity) {
+    sections.push(
+      new Paragraph({
+        style: 'entryTitle',
+        children: [
+          new TextRun(`${formData.pgUniversity} ${formData.pgCityOrState}`)
+        ]
+      }),
+      new Paragraph({
+        style: 'entryText',
+        children: [
+          new TextRun(`${formData.pgDegree} • Graduation: ${formData.pgGraduationYear}`)
+        ]
+      })
+    )
+
+    if (formData.pgDissertationTitle) {
+      sections.push(
+        new Paragraph({
+          style: 'entryText',
+          children: [
+            new TextRun(`Dissertation: ${formData.pgDissertationTitle}`)
+          ]
+        })
+      )
+    }
+
+    if (formData.pgGrade) {
+      sections.push(
+        new Paragraph({
+          style: 'entryText',
+          children: [
+            new TextRun(`Grade: ${formData.pgGrade}`)
+          ]
+        })
+      )
+    }
+
+    sections.push(
+      new Paragraph({
+        spacing: {
+          after: 120
+        }
+      })
+    )
+  }
+
   if (formData.ugUniversity) {
     sections.push(
       new Paragraph({
         style: 'entryTitle',
         children: [
-          new TextRun(`${formData.ugUniversity} ${formData.ugLocation}`)
+          new TextRun(`${formData.ugUniversity} ${formData.ugCityOrState}`)
         ]
       }),
       new Paragraph({
@@ -62,52 +109,6 @@ export const createEducation = (formData) => {
     )
   }
 
-  if (formData.pgUniversity) {
-    sections.push(
-      new Paragraph({
-        style: 'entryTitle',
-        children: [
-          new TextRun(`${formData.pgUniversity} ${formData.pgLocation}`)
-        ]
-      }),
-      new Paragraph({
-        style: 'entryText',
-        children: [
-          new TextRun(`${formData.pgDegree} • Graduation: ${formData.pgGraduationYear}`)
-        ]
-      })
-    )
-
-    if (formData.pgDissertationTitle) {
-      sections.push(
-        new Paragraph({
-          style: 'entryText',
-          children: [
-            new TextRun(`Dissertation: ${formData.pgDissertationTitle}`)
-          ]
-        })
-      )
-    }
-
-    if (formData.pgGrade) {
-      sections.push(
-        new Paragraph({
-          style: 'entryText',
-          children: [
-            new TextRun(`Grade: ${formData.pgGrade}`)
-          ]
-        })
-      )
-    }
-
-    sections.push(
-      new Paragraph({
-        spacing: {
-          after: 120
-        }
-      })
-    )
-  }
 
   if (formData.exchangeUniversity) {
     sections.push(

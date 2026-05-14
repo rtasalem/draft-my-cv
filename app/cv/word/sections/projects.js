@@ -57,7 +57,7 @@ export const createProjects = (formData) => {
         )
 
         if (summary) {
-          const lines = summary.split('\n').filter(line => line.trim())
+          const lines = summary.split('/\r?\n/').filter(line => line.trim())
 
           lines.forEach(line => {
             sections.push(createBulletPoint(line))

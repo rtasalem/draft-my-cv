@@ -1,8 +1,8 @@
 import express from 'express'
+import { aboutController } from '../controllers/about.js'
+
 const router = express.Router()
 
-router.get('/about', (req, res) => {
-  res.render('about')
-})
+router.get('/', aboutController)
 
 export default router

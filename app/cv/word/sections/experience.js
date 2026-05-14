@@ -40,7 +40,7 @@ export const createExperience = (formData) => {
       )
 
       if (jobSummary) {
-        const lines = jobSummary.split('\n').filter(line => line.trim())
+        const lines = jobSummary.split('/\r?\n/').filter(line => line.trim())
 
         lines.forEach(line => {
           sections.push(createBulletPoint(line))

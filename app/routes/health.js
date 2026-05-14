@@ -1,12 +1,8 @@
 import express from 'express'
+import { healthController } from '../controllers/health.js'
+
 const router = express.Router()
 
-router.get('/healthy', (req, res) => {
-  res.send('draft-my-cv is ok')
-})
-
-router.get('/healthz', (req, res) => {
-  res.send('draft-my-cv is ok')
-})
+router.get('/', healthController)
 
 export default router
