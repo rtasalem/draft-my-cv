@@ -21,13 +21,17 @@
   "dependencies": {
     "docx": "9.1.1",
     "docxtemplater": "^3.60.2",
-    "express": "4.21.2",
+    "express": "^4.22.2",
     "html-to-docx": "^1.8.0",
     "nunjucks": "3.2.4",
     "pdfkit": "^0.17.0"
   },
   "devDependencies": {
-    "nodemon": "3.0.1",
-    "standard": "17.1.2"
+    "nodemon": "^3.1.14",
+    "standard": "^17.1.2"
+  },
+  "overrides": {
+    "brace-expansion": "^5.0.8",
+    "minimatch": "^10.0.3"
   }
 }
