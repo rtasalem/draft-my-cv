@@ -1,31 +1,26 @@
+// Values taken from the Harvard bullet template (2025), converted from twips to points.
 export const fonts = {
-  bold: 'Times-Bold',
-  roman: 'Times-Roman'
+  regular: 'Helvetica',
+  bold: 'Helvetica-Bold'
 }
 
-export const fontSizes = {
-  header: 18,
-  sectionTitle: 14,
-  body: 11
+export const fontSize = 11
+
+export const page = {
+  size: 'LETTER',
+  margins: { top: 36, bottom: 14, left: 30, right: 30 }
 }
 
-export const layout = {
-  margin: 40,
-  lineEnd: 550
+export const indent = {
+  entry: 6,
+  bullet: 24,
+  bulletText: 42
 }
 
-export const spacing = {
-  sectionBefore: 1,
-  sectionAfter: 0.5,
-  headerAfter: 0.5,
-  entryAfter: 0.5,
-  bulletBefore: 0.2,
-  bulletAfter: 0.5,
-  contactAfter: 1
+export const rule = {
+  width: 1,
+  gapBefore: 1,
+  gapAfter: 8.5
 }
 
-export const bullet = {
-  xOffset: -5,
-  yOffset: 4,
-  radius: 1
-}
+export const linkColour = '#0563C1'

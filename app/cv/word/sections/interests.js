@@ -1,33 +1,4 @@
-import {
-  Paragraph,
-  TextRun
-} from 'docx'
-import { createBulletPoint } from '../utils.js'
+import { createSection } from '../utils.js'
+import { buildSkillsAndInterests } from '../../content.js'
 
-export const createInterests = (formData) => {
-  const interests = []
-  const sections = []
-
-  sections.push(
-    new Paragraph({
-      style: 'sectionTitle',
-      children: [
-        new TextRun('Interests')
-      ]
-    })
-  )
-
-  for (let i = 1; i <= 6; i++) {
-    if (formData[`interest${i}`]) {
-      interests.push(formData[`interest${i}`])
-    }
-  }
-
-  if (interests.length) {
-    interests.forEach(item => {
-      sections.push(createBulletPoint(item))
-    })
-  }
-
-  return sections
-}
+export const createInterests = (formData) => createSection(buildSkillsAndInterests(formData))

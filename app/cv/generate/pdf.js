@@ -1,5 +1,5 @@
 import PDFDocument from 'pdfkit'
-import { layout } from '../pdf/styles.js'
+import { page } from '../pdf/styles.js'
 import { createHeader } from '../pdf/sections/header.js'
 import { createEducation } from '../pdf/sections/education.js'
 import { createExperience } from '../pdf/sections/experience.js'
@@ -12,7 +12,7 @@ export const generatePdf = (formData, res) => {
   }
 
   try {
-    const doc = new PDFDocument({ margin: layout.margin })
+    const doc = new PDFDocument({ size: page.size, margins: page.margins })
     res.setHeader('Content-Type', 'application/pdf')
     res.setHeader('Content-Disposition', 'attachment; filename=resume.pdf')
     doc.pipe(res)
