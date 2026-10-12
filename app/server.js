@@ -10,7 +10,8 @@ import {
   generate,
   about,
   issues,
-  disclaimer
+  disclaimer,
+  countries
 } from './routes/index.js'
 
 const server = async () => {
@@ -38,6 +39,7 @@ const server = async () => {
   app.use('/issues', issues)
   app.use('/download', download)
   app.use('/generate', generate)
+  app.use('/api/countries', countries)
   app.use('/', submit)
 
   app.listen(port, () => {
