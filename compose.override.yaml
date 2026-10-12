@@ -7,6 +7,11 @@ services:
     container_name: draft-my-cv-development
     ports:
       - "3000:3000"
+    environment:
+      REST_COUNTRIES_API_KEY: ${REST_COUNTRIES_API_KEY}
+      # Trusts a TLS-inspecting proxy's root CA (e.g. Zscaler) if present in ./certs
+      NODE_EXTRA_CA_CERTS: /home/node/certs/zscaler-root-ca.pem
     volumes:
       - ./app:/home/node/app
       - ./package.json:/home/node/package.json
+      - ./certs:/home/node/certs:ro

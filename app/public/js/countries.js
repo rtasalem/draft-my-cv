@@ -1,18 +1,18 @@
+/* global Option */
 document.addEventListener('DOMContentLoaded', () => {
   const selectDrop = document.getElementById('country')
 
-  fetch('https://restcountries.com/v3.1/all?fields=name,cca2,idd').then(res => {
+  fetch('/api/countries').then(res => {
+    if (!res.ok) throw new Error(`Country list request failed with ${res.status}`)
     return res.json()
   }).then(countries => {
-    let options = '<option value="" disabled selected>Country</option>'
+    const placeholder = new Option('Country', '', true, true)
+    placeholder.disabled = true
+    selectDrop.replaceChildren(placeholder)
 
-    countries
-      .sort((a, b) => a.name.common.localeCompare(b.name.common))
-      .forEach(country => {
-        options += `<option value="${country.name.common}">${country.name.common}</option>`
-      })
-
-    selectDrop.innerHTML = options
+    countries.forEach(country => {
+      selectDrop.add(new Option(country.name, country.name))
+    })
   }).catch(err => {
     console.log(err)
   })

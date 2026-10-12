@@ -1,29 +1,21 @@
+/* global Option */
 document.addEventListener('DOMContentLoaded', () => {
   const selectDrop = document.getElementById('calling-code')
 
-  fetch('https://restcountries.com/v3.1/all?fields=name,cca2,idd').then(res => {
+  fetch('/api/countries').then(res => {
+    if (!res.ok) throw new Error(`Country list request failed with ${res.status}`)
     return res.json()
   }).then(countries => {
-    let options = '<option value="" disabled selected>Calling code</option>'
+    const placeholder = new Option('Calling code', '', true, true)
+    placeholder.disabled = true
+    selectDrop.replaceChildren(placeholder)
 
-    countries
-      .sort((a, b) => a.name.common.localeCompare(b.name.common))
-      .forEach(country => {
-        const name = country.cca2
-        const idd = country.idd
-        if (!idd || !idd.root) return
-
-        const fullCodes = (idd.suffixes && idd.suffixes.length > 0)
-          ? idd.suffixes.map(suffix => `${idd.root}${suffix}`)
-          : [`${idd.root}`]
-
-        fullCodes.forEach(code => {
-          options += `<option value="${code}">${name} (${code})</option>`
-        })
+    countries.forEach(country => {
+      country.callingCodes.forEach(code => {
+        selectDrop.add(new Option(`${country.code || country.name} (${code})`, code))
       })
-
-    selectDrop.innerHTML = options
+    })
+  }).catch(err => {
+    console.log(err)
   })
-}).catch(err => {
-  console.log(err)
 })
