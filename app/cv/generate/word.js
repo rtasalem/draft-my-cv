@@ -2,7 +2,7 @@ import {
   Document,
   Packer
 } from 'docx'
-import { styles } from '../word/styles.js'
+import { styles, numbering, page } from '../word/styles.js'
 import { createHeader } from '../word/sections/header.js'
 import { createEducation } from '../word/sections/education.js'
 import { createExperience } from '../word/sections/experience.js'
@@ -32,11 +32,12 @@ export const generateWordDoc = async (formData, res) => {
     const doc = new Document({
       sections: [
         {
-          properties: {},
+          properties: { page },
           children: sections
         }
       ],
-      styles
+      styles,
+      numbering
     })
 
     Packer.toBuffer(doc).then(buffer => {

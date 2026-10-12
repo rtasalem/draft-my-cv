@@ -1,28 +1,18 @@
-import { fonts, fontSizes, spacing, layout } from '../styles.js'
+import { fonts, fontSize, rule } from '../styles.js'
+import { addBlankLine } from '../utils.js'
+import { buildHeader } from '../../content.js'
 
 export const createHeader = (doc, formData) => {
-  doc
-    .fontSize(fontSizes.header)
-    .font(fonts.bold)
-    .text(`${formData.firstName} ${formData.lastName}`, { align: 'center' })
+  const { name, contact } = buildHeader(formData)
+  const left = doc.page.margins.left
+  const right = doc.page.width - doc.page.margins.right
+  const width = right - left
 
-  doc.moveDown(spacing.headerAfter)
-  doc.moveTo(doc.x, doc.y).lineTo(layout.lineEnd, doc.y).stroke()
-  doc.moveDown(spacing.headerAfter)
+  doc.font(fonts.bold).fontSize(fontSize).text(name, left, doc.y, { width, align: 'center' })
 
-  const city = formData.city || ''
-  const country = formData.country || ''
-  const location = city + (country ? `, ${country}` : '')
-  const contact = [
-    location,
-    formData.emailAddress,
-    `${formData.callingCode || ''} ${formData.phoneNumber}`
-  ].filter(Boolean).join(' • ')
+  const ruleY = doc.y + rule.gapBefore
+  doc.lineWidth(rule.width).moveTo(left, ruleY).lineTo(right, ruleY).stroke()
 
-  doc
-    .fontSize(fontSizes.body)
-    .font(fonts.roman)
-    .text(contact, { align: 'center' })
-
-  doc.moveDown(spacing.contactAfter)
+  doc.font(fonts.regular).text(contact, left, ruleY + rule.gapAfter, { width, align: 'center' })
+  addBlankLine(doc)
 }

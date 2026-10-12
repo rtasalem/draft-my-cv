@@ -1,45 +1,21 @@
-import {
-  Paragraph,
-  TextRun,
-  BorderStyle
-} from 'docx'
+import { Paragraph, TextRun } from 'docx'
+import { nameRule } from '../styles.js'
+import { createBlankLine } from '../utils.js'
+import { buildHeader } from '../../content.js'
 
 export const createHeader = (formData) => {
-  const fullName = `${formData.firstName} ${formData.lastName}`
+  const { name, contact } = buildHeader(formData)
 
   return [
     new Paragraph({
-      style: 'header',
-      children: [
-        new TextRun(fullName)
-      ]
+      style: 'name',
+      border: { bottom: nameRule },
+      children: [new TextRun(name)]
     }),
     new Paragraph({
-      borders: {
-        bottom: {
-          color: 'auto',
-          space: 1,
-          style: BorderStyle.SINGLE,
-          size: 6
-        }
-      },
-      spacing: {
-        before: 120,
-        after: 120
-      }
+      style: 'contact',
+      children: [new TextRun(contact)]
     }),
-    new Paragraph({
-      style: 'contactInformation',
-      children: [
-        new TextRun(
-          [
-            formData.city || '',
-            formData.country ? `, ${formData.country}` : '',
-            formData.emailAddress ? ` • ${formData.emailAddress}` : '',
-            formData.phoneNumber ? ` • ${formData.callingCode || ''} ${formData.phoneNumber}` : ''
-          ].join('')
-        )
-      ]
-    })
+    createBlankLine()
   ]
 }
