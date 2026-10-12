@@ -21,3 +21,4 @@
 - [ ] Remove barrel (`index.js`) files
 - [ ] Figure out why undergraduate education isn't submitted
 - [ ] Put job title + date ranges as first line and then employer on second line for experience section.
+- [ ] Rewrite arrow functions as declared functions.
